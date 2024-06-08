@@ -1,0 +1,3554 @@
+Text,Category_Conclusion/Future Work,Category_Data/Dataset,Category_Discussion/Analysis,Category_Experiments/Experimentation,Category_Introduction/Background,Category_Methods/Methodology,Category_Results/Findings,Category_Tools/Technologies,Category_Uncategorized
+"SPECIAL SECTION ON ADVANCES IN MACHINE LEARNING AND COGNITIVE COMPUTING
+FOR INDUSTRY APPLICATIONS
+Received April 28, 2020, accepted May 7, 2020, date of publication May 11, 2020, date of current version May 26, 2020.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Digital Object Identifier 10.1
+109/ACCESS.2020.2993803
+Facial Sentiment Analysis Using AI Techniques:
+State-of-the-Art, Taxonomies, and Challenges
+KEYUR PATEL
+1, DEV MEHTA
+1, CHINMAY MISTRY
+1,
+RAJESH GUPTA
+1, (Student Member, IEEE), SUDEEP TANWAR
+1, (Member, IEEE),
+NEERAJ KUMAR
+2,3,4, (Senior Member, IEEE), AND
+MAMOUN ALAZAB5, (Senior Member, IEEE)
+1Department of Computer Science and Engineering, Institute of Technology, Nirma University, Ahmedabad 382481, India
+2Department of Computer Science Engineering, Thapar Institute of Engineering and Technology, Patiala 147004, India
+3Department of Computer Science and Information Engineering, Asia University, Taichung 41354, Taiwan
+4Department of Information Technology, King Abdul Aziz University, Jeddah 21589, Saudi Arabia
+5College of Engineering, IT and Environment, Charles Darwin University, Casuarina, NT 0810, Australia
+Corresponding authors: Neeraj Kumar (neeraj.kumar@thapar.edu) and Mamoun Alazab (mamoun.alazab@cdu.edu.au)
+This work was supported by the Department of Corporate and Information Services, NTG of Australia.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"ABSTRACT With the advancements in machine and deep learning algorithms, the envision of various
+critical real-life applications in computer vision becomes possible.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"One of the applications is facial sentiment
+analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Deep learning has made facial expression recognition the most trending research ﬁelds in computer
+vision area.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Recently, deep learning-based FER models have suffered from various technological issues like
+under-ﬁtting or over-ﬁtting.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+It is due to either insufﬁcient training and expression data.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Motivated from
+the above facts, this paper presents a systematic and comprehensive survey on current state-of-art Artiﬁcial
+Intelligence techniques (datasets and algorithms) that provide a solution to the aforementioned issues.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It also
+presents a taxonomy of existing facial sentiment analysis strategies in brief.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Then, this paper reviews the
+existing novel machine and deep learning networks proposed by researchers that are speciﬁcally designed
+for facial expression recognition based on static images and present their merits and demerits and summarized
+their approach.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Finally, this paper also presents the open issues and research challenges for the design of a
+robust facial expression recognition system.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"INDEX TERMS Facial sentiment analysis, machine learning, deep learning, convolutional neural network,
+deep belief network, artiﬁcial intelligence.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+I.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"INTRODUCTION
+Emotions are efﬁcacious and self-explanatory in normal
+day-to-day human interactions.",0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+"The most noticeable human
+emotion is through their facial expressions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The Facial
+Expression Recognition (FER) is quite complex and tedious
+but helps in various applications areas such as healthcare
+[1]–[3], emotionally driven robots, and human-computer
+interaction.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Although the advancements in FER increases its
+effectiveness, achieving a high accuracy is still a challenging
+task [4].",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"The six most generic emotions of a human are anger,
+happiness, sadness, disgust, fear, and surprise.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Moreover,
+the emotion called contempt was added as one of the basic
+emotions [5].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The associate editor coordinating the review of this manuscript and
+approving it for publication was Min Xia
+.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"FER is a bafﬂing task and its accuracy is completely depen-
+dent on the parameters selected, such as illumination factors,
+occlusion, i.e., obstruction on the face like hand, age, and sun-
+glasses.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"Researchers of the ﬁeld are taking these parameters
+into consideration while making their FER models so that
+the considerable accuracy can be achieved.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"The description
+of some important factors for FER is as follows.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Illumination factor: The light intensity falling on the
+object affects the classiﬁcation of the model.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The tex-
+tural values increase the false acceptance rate due to
+either by minimizing the distance between classes or by
+increasing the contrast [6].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Expression Intensity: The expression recognition is
+highly dependent on the intensity of the expression.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The expression is recognized more accurately when the
+expression is less subtle.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It highly affects the accuracy
+of the model.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"VOLUME 8, 2020
+This work is licensed under a Creative Commons Attribution 4.0 License.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"For more information, see https://creativecommons.org/licenses/by/4.0/
+90495
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+TABLE 1.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Nomenclature.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+FIGURE 1.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+The general pipeline of FER systems.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Occlusion: If occlusion is present on an image then it
+becomes difﬁcult for the model to extract features from
+the occluded part due to inaccurate face alignment and
+imprecise feature location.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It also introduces noise to
+outliers and the extracted features.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"FER systems can be either static or dynamic based on
+image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Static FER considers only the face point location
+information from the feature representation of a single image,
+whereas, the Dynamic Image FER considers the temporal
+information with continuous frames [7], [8].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The static FER
+process over is exhibited in FIGURE 1 with description of
+steps as follows.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Dataset: To avoid over-ﬁtting, the following FER algo-
+rithms are discussed, which needs extensive training
+data.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"A dataset must have well-deﬁned emotion tags
+of facial expression is essential for testing, training,
+and validating the algorithms for the development of
+FER.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"These datasets contain a sequence of images
+with distinct emotions, as mentioned above.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"We have
+reviewed many datasets to train different models for
+real-world proﬁts.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Table 4 provides an overview of dif-
+ferent datasets available for FER.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"• Pre-Processing: This step pre-processes the dataset by
+removing noise and data compression.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Various steps
+involved in data pre-processing are: (i) facial detection
+is the power to detect the location of the face in any
+image or frame.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It is often considered as a special case
+of object-class detection, which determines whether the
+face is present in an image or not, (ii) dimension reduc-
+tion is used to reduce the variables by a set of principal
+variables.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"If the number of features is more, then it gets
+tougher to visualize the training set and to work on it.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Here, PCA and LDA can be used to handle the afore-
+mentioned situation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(iii) normalization: It is also known
+as feature scaling.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After the dimension reduction step,
+reduced features are normalized without distorting the
+differences in the range of values of features.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are
+various normalization methods, namely Z Normaliza-
+tion, Min-Max Normalization, Unit Vector Normaliza-
+tion, which improves the numerical stability and speeds
+up the training of the model.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Feature Extraction: It is the process of extracting fea-
+tures that are important for FER.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It results in smaller and
+richer sets of attributes that contain features like face
+edges, corners, diagonal, and other important informa-
+tion such as distance between lips and eyes, the distance
+between two eyes, which helps in speedy learning of
+trained data.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"• Emotion Classiﬁcation: It involves the algorithms to
+classify the emotions based on the extracted features.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The classiﬁcation has various methods, which classi-
+ﬁes the images into various classes.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The classiﬁcation
+of a FER image is carried out after passing through
+pre-processing steps of face detection and feature extrac-
+tion.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Various classiﬁcation techniques are discussed
+later in the proposed survey.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The
+FER
+system
+has
+various
+applications
+such
+as
+computer-human interactions, healthcare system [9]–[14],
+and social marketing.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In the proposed survey, we analyze the
+existing surveys pertaining to different approaches of FER
+proposed by the authors globally.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"We compare the surveys
+and develop a taxonomy on various pre-processing, feature
+extraction, and emotion classiﬁcation steps.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"We also discuss
+the various open issues and future research challenges related
+to FER.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+A.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"MOTIVATION
+Paul Ekman ﬁrst coined the term FER in the mid-1980s.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Since then, various machine learning techniques like random
+90496
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+forest classiﬁers, artiﬁcial neural networks, etc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"were used by
+the researchers to recognize the seven basic emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They
+also claimed good and effective results.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"Automated human
+emotion detection is all-important in security and surveillance
+applications these days.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To further improve its performance,
+the researchers are trying hard to explore further in this ﬁeld.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"Various challenges like occlusion in datasets, over-ﬁtting of
+models, etc.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"have to be taken care of while implementing the
+FER.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"As per the literature explored and knowledge of the
+authors, no survey is available, which exhaustively compares
+the FER approaches from the perspective of AI.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Motivated
+from the aforementioned fact, we present a comprehensive
+survey on FER using Artiﬁcial Intelligence (AI) techniques in
+which we have explored the state-of-the-art machine learning
+and DL (DL) approaches with their merits and demerits.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+B.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"SCOPE OF THE SURVEY
+Facial sentiment analysis is the most trending topics in Com-
+puter Vision area.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"A lot of literature has already been pub-
+lished by researchers across the globe in this ﬁeld, but still,
+many researchers are trying to solve the challenges and issues
+in FER.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Various surveys have been published in recent years
+[7], [15], [26], [27] on sentiment analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"These surveys have
+mainly focused on traditional methods like support vector
+machine (SVM), decision tree classiﬁers, and artiﬁcial neural
+network (ANN).",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The DL methods [28], [29] have rarely been
+explored by the researchers working in the same ﬁeld.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"So,
+in this paper, we analyzed the surveys on facial sentiment
+analysis and presented a comparative analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"For example,
+Hemalatha and Sumathi [15] surveyed various methods for
+facial detection, facial feature extraction and classiﬁcation of
+FER, but not presented the proper comparison of methods
+considered and the dataset used.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Later, the authors in [16] also
+presented the survey on FER, but they had not mentioned any-
+thing about datasets useful for emotions recognition.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Another
+survey of Chengeta and Viriri [19] was on various traditional
+feature extraction techniques like principal component analy-
+sis (PCA), Linear Discriminant Analysis (LDA), and Locally
+Linear Embedding (LLE), and thereafter they proposed an
+ensemble classiﬁer.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They failed to compare the advanced
+DL approach, which is currently the most novel approach in
+FER.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Again, Baskar and Kumar [18] also lacks in explaining
+various DL approaches.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Recently, DL-based FER approaches has been explored in
+[7], [27], which are the detailed surveys without the discus-
+sion on FER.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Therefore, in the proposed survey, we make a
+systematic survey of various databases used for FER, various
+methods for face detection, facial feature extraction, and
+emotion classiﬁcation, future challenges, and current issues
+in facial sentiment analysis.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Our aim for this survey that it
+would be quite beneﬁcial for those who want to explore in
+this ﬁeld and they will get a complete overview of all the
+advanced systematic approaches in facial sentiment analysis.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Table 2 presents relative differences between the existing
+surveys with the proposed survey.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"C. RESEARCH CONTRIBUTIONS
+In this paper, we surveyed various existing literature on Facial
+Sentiment Analysis focusing on the DL techniques, datasets,
+and the methodologies used to classify emotions.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Following
+are the crisp contributions of the paper.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• We present an in-depth survey on FER methods and
+dataset used.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Then, we highlight the advanced methods
+used for FER and their comparative analysis.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• We present a taxonomy on FER methods based on face
+detection, feature extraction, and emotion classiﬁcation.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Finally, we presented the open issues and research chal-
+lenges in the Facial Sentiment Analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"D. ORGANIZATION
+Structure of the survey is as shown in FIGURE 2.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Section II
+focuses on the evolution of facial recognition techniques
+presented by the authors across the globe and the dataset
+used.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It also describes the need for facial detection, dimension
+reduction, normalization, feature extraction, and emotion
+classiﬁcation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In Section III, we highlighted the bibliometric
+analysis and methodology used for conducting the proposed
+survey.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"In Section IV, we discuss various facial expression
+databases available for analysis.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Section V discusses the
+proposed taxonomy (facial sentiment analysis taxonomy).",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"In Section VI, we discuss the open issues and research chal-
+lenges of FER, and ﬁnally, Section VII concludes the survey.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Table 1 lists all the acronyms used in the paper.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+II.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"BACKGROUND
+This section focuses on the background and importance of
+facial expressions for sentiment analysis.",0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+"It is bifurcated into
+four subsections.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Firstly, we discuss the evolution of the
+time-line of facial recognition methods.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Secondly, we dis-
+cuss the need for Facial Detection, Dimension Reduction,
+and Normalization for sentiment analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"In the third sub-
+section, we focus on the need for feature extraction from
+the face image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Finally, we highlight the need for emotion
+classiﬁcation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A. EVOLUTION TIMELINE
+Figure 3 gives a brief overview on the evolutionary time-line
+of facial sentimental recognition methods given by the
+researchers across the globe along with the datasets.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"There
+exists various algorithms for FER such as traditional state-of-
+the-art algorithms and DL-based algorithms proposed by var-
+ious researchers till 2020.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The emotion recognition was ﬁrst
+stated in the paper proposed by Bassili [30] in 1978 where
+authors have classiﬁed the emotions into six basic gestures
+such as happiness, sadness, fear, surprise, anger, and dis-
+gust.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Different algorithms (traditional and DL) were used for
+FER by the authors.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"For example, Padgett and Cottrell [31],
+the ﬁrst time (ANN) in 1996, SVM [32] in 2000, CNN [33]
+in 2003, Multi-SVM [34] in 2006, boosted DBN [34] in 2014,
+RNN [35] in 2015, and (PHRNN and MSCNN) [36] in 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Also, many datasets have been created for training ans testing
+VOLUME 8, 2020
+90497
+K. Patel et al.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+TABLE 2.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+A relative comparison of the proposed survey with the existing FER surveys.,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+these FER models.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The time-line shows the list of datasets as
+per the creation year.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Datasets are- JAFFE [37] in 1998, CK+
+[38] in 2000, MMI [39] in 2002, Oulu-CASIA [40] in 2008,
+Multi-PIE [41] in 2009, (RaFD [42], MUG [43], and TFD
+[44]) in 2010, and FER-2013 [45] in 2013.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"As new datasets
+are being available supported with DL algorithms to solve the
+challenges in FER.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+B.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"NEED FOR FACIAL DETECTION, DIMENSION
+REDUCTION AND NORMALIZATION
+In the FER process, the ﬁrst pre-requisite step is face detec-
+tion, which involves the detection of a face in the image or
+frame and removes the insigniﬁcant pixels.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The face detection
+algorithm gives the output in the form of coordinates of the
+bounding box, which is put over the face.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Detecting a face
+is quite complex as the human faces can be in different sizes
+and shapes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"So, the face detection algorithm plays a vital role
+in the aforementioned situation.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Various algorithms for face
+detection are available such as Viola-Jones [46], PCA, LDA,
+and genetic algorithms.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Viola-Jones algorithm is one of the
+most widely used algorithms for face detection.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It differenti-
+ates faces from the non-faces.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"PCA is the other most widely
+used face detection method.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It is used to reduce the image
+dimensions and has four main parts:- feature covariance,
+eigen decomposition, principal component transformation,
+and choosing components [47].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Reducing the dimensions
+from m −dimensions to n −dimensions: ∀m > n does not
+means we are losing the properties of the image, moreover it
+90498
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 2.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Roadmap of the survey.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+preserves [48].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After the dimension reduction, normalization
+can be used to scale-up the image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"C. NEED FOR FEATURE EXTRACTION
+Facial Expression analysis comprises of various methods
+such as facial landmark identiﬁcation, feature extraction,
+and different feature extraction databases.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Facial landmarks
+are drawn by the facial key points which are derived from
+the geometry of the face [16].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Feature Extraction is done
+after preprocessing phase [49].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are two methods avail-
+able for feature extraction are appearance-based extrac-
+tion and geometric-based extraction.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The geometric-based
+method extracts feature like edge features and corner features.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Neha et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[50] analyzed the performance of the feature
+extraction technique Gabor ﬁlter.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They also tested the average
+gabor ﬁlter and compared both the ﬁltering techniques to
+enhance the recognition rate.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Corners: Corners of an image is a signiﬁcant property,
+which can be inferred from the complex objects of
+the image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Cho et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[51] developed the corner detec-
+tion technique, which measures the distance and angle
+between two straight lines.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Edges: They are one-dimensional features that represent
+the boundary of an image region.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The second method, which is an appearance-based method,
+takes care of the states of different points of the face, such
+as the position of the eye, shape of important points such
+as mouth and eyebrows using the salient point features.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The majority of the traditional methods have used Local
+Binary Pattern (LBP) as the feature extraction technique,
+which is a generic-based framework for the extraction of
+features from the static image.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It converts the most impor-
+tant features of the input image, as mentioned above, into a
+histogram [52].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"D. NEED FOR EMOTION CLASSIFICATION
+The third step in the FER is the Emotion Classiﬁcation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There
+are various methods that are used for the classiﬁcation of
+emotions after applying face detection and feature extraction
+algorithms.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The various classiﬁcation algorithms are con-
+volutional neural network (CNN) [53], SVM, and restricted
+boltzmann machine (RBM).",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The most widely used method
+for classiﬁcation is CNN.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It is the most efﬁcient algorithm as
+it can be applied directly to the input image without applying
+any feature extraction and face detection algorithms and still
+gets better accuracy over the input data [54].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The number
+of images in the training data set also has a huge impact
+VOLUME 8, 2020
+90499
+K. Patel et al.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 3.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Evolution of facial recognition methods and datasets.,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+on classiﬁcation results.,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"CNN faces a huge challenge in the
+training of limited-image dataset.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"So, the models which are
+built on a limited dataset can use the SVM algorithm for fea-
+ture extraction and face detection.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The emotions of a human
+are not static, it varies time-to-time.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"So, the classiﬁcation of
+situation-based emotions is challenging.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+III.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"SURVEY METHODOLOGY
+In this section, we present the methodology followed to con-
+duct the proposed survey such as search strings used, research
+questions, and the authentic data sources.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+A.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"RESEARCH PLANNING
+The proposed survey initiated with the discussion and iden-
+tiﬁcation of various quality research questions, data sources,
+as well as search criteria.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"We identiﬁed the relevant surveys
+proposed by various researchers and if data is found relevant,
+then we extracted data from it [55].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+B.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"RESEARCH QUESTIONS
+The proposed survey found out the existing literature on
+Facial Sentiment Analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The identiﬁed research questions
+are speciﬁed in Table 3.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+TABLE 3.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Research questions and their objectives.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+FIGURE 4.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Possible strings used to search the literature.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"C. DATA SOURCES
+Various literature has been studied for a thorough and com-
+plete survey.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"We followed the genuine digital databases
+such as Springer, IEEEXplore (early access, magazine, and
+transaction articles), Science Direct (elsevier), ACM digital
+library, Google Scholar for accessing the existing literature
+surveys on Facial Sentiment Analysis [56].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"D. SEARCH CRITERIA
+The search is performed using some standard keywords like
+‘‘Facial Sentiment Analysis’’, ‘‘Facial Emotion Recognition’’
+and other matching keywords as mentioned in FIGURE 4.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"There exist many articles in different digital libraries, where
+the search string is not present either in the title or abstract
+[57], then a manual search process was done for such research
+papers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IV.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"FACIAL EXPRESSION DATABASES
+In this section, we discuss various datasets that are currently
+used for training and testing in FER.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"We also presented a
+comparative analysis of these datasets based on the articles
+90500
+VOLUME 8, 2020
+K. Patel et al.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+TABLE 4.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Different facial expression databases.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+published till-date.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The comparative analysis of the datasets
+is presented in Table 4.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+A.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"EXTENDED COHN-KANADE (CK+)
+CK+ is the most widely used dataset for FER systems [7],
+[38], which contains almost 593 different sequences captured
+from 123 different subjects.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Sequences may vary between
+10 to 50 frames, whereas frames shows the shift from a
+neutral face to a speciﬁc expression [7].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+B.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"THE JAPANESE FEMALE FACIAL EXPRESSION
+JAFFE data-set includes 219 different images with 7 facial
+expressions captured from 10 Japanese female models [73].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Images of each and every model were captured while look-
+ing through a camers with semi-reﬂective plastic sheet.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To remove less illumination problem on the face, tungsten
+lights were used.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"C. RADBOUD FACES DATABASE (RAFD)
+RaFD database is the database of portrait images of 49 sub-
+jects of 39 Dutch adults and 10 Dutch children [42].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"All
+models have 8 facial emotions like neutral, sadness, happi-
+ness, disgust, anger, contempt, surprise, and fear with three
+gaze directions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Every emotion in the image was shown with
+eyes coordinated straight ahead, deﬂected to the left side, and
+turned away to the right side.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pictures were captured with
+white background from ﬁve different camera angles at the
+same time from left to right with 45◦angle.",0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+"There are total
+of 120 images for each model.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"VOLUME 8, 2020
+90501
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+D. DELIBERATE EXPRESSION DATASET MMI
+MMI database is a laboratory-controlled database which
+contains 326 sequences from 32 subjects [39], [74].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"There
+are total of 213 sequences labeled with 6 expressions
+and the main advantage of this database is that there are
+205 sequences captured in frontal view.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The difference
+between CK+ and this database is that this database contains
+sequences which starts with a neutral expression and reaches
+to the speciﬁc expression at the middle of the sequence
+and then returns to the neutral expression.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It is a complex
+database because there exist large relational variations due
+to the images have the same expressions and non-uniformity
+(many of the images have glasses, long hair, and mustache).",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Researchers widely use the ﬁrst and the last three frames to
+the ﬁnal expression to perform emotion recognition task [7].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"E. FER2013
+This database was ﬁrst established during the ICML
+2013 challenges of Kaggle [7], [45].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It includes a large num-
+ber of images and important characteristics.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It also includes
+unconstrained images collected automatically by Google
+image search API.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It contains 28,709 images for the training
+set, 3,589 images for validation set, and 3,589 images for test
+set, which sums up to total 35,887 images with 7 expression
+labels [7].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"All these images have been reduced to the size of
+(48 × 48) pixels.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This is one of the most challenging datasets
+in FER.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"F. TORONTO FACE DATABASE (TFD)
+It is the combination of different FER datasets [44].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It includes 1,12,234 images, 4,178 of which are labeled
+with one of the seven expression labels, such as sadness,
+surprise, fear, happiness, anger, disgust, and neutral [7].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+main advantage of this dataset is that it contains images that
+have faces been already detected and reduced to the size of
+(48 × 48).",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"There are 5 folds in this database where each fold
+has 70% of images for the training set, 10% of images for the
+validation set, and remaining for test set [7].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"G. MULTI-PIE
+This database contains 755,370 images with 337 subjects
+[41].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The main advantage of this database is that it includes
+images with 15 different viewpoints and 19 diverse illu-
+mination conditions and each image is named as one
+of the 6 expression.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"This is mainly used for multi-view
+3D FER [7].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"H. STATIC FACIAL EXPRESSIONS IN THE WILD (SFEW)
+IT was designed by selecting frames (static) from the acted
+facial expressions in wild (AFEW) [67].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The advanced SFEW
+2.0 was the benchmarking data used for EmotiW 2015 chal-
+lenge.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It includes 958 images for train, 436 images for
+validation, and 372 for test set labeled with 7 expression
+labels [7].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"I. OULU-CASIA
+Oulu-CASIA NIR (near-infrared) and VIS (visible light)
+facial expression database with six diverse expressions (sur-
+prise, happiness, sadness, anger, fear, and disgust) having
+80 subjects between the ages of 23 and 58 years [40].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"73.8%
+of the subjects are males and the rest are females.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The image
+resolution is 320 × 240 pixels.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"J. MULTIMEDIA UNDERSTANDING GROUP
+It is also known as MUG [43] dataset, which is a
+laboratory-controlled dataset with 6 basic emotions-anger,
+disgust, fear, happy, sad, surprise, and neutral.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"This database
+is divided into two segments.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"In the initial segment, the sub-
+jects were approached to play out the six basic emotions.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The
+subsequent part contains a research facility that prompted
+feelings.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There is a total of 86 subjects and 1462 image
+sequences.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A camera has the option to click pictures at a
+pace of 19 frames/second.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Each picture is in jpg format with
+(896 × 896) pixels and 240 to 340 KB size.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This dataset was
+made to defeat the restrictions of other comparable datasets
+in FER, such as high goals, uniform lighting, numerous sub-
+jects, and numerous clicks per subject.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"K. AFFECTNET
+It is a dataset for the identiﬁcation of wild human expressions.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It has above 1 million different images to be collected from
+the internet source by using over 1200 keywords related to
+human emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"L. EMOTIC
+It is a facial emotion dataset with EMOTions In Context.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It collected the images of people in the real environment with
+apparent emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+It has widest 26 emotions categories.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"V. FACIAL SENTIMENT ANALYSIS:
+THE PROPOSED TAXONOMY
+This section presents the taxonomy for Facial Sentiment
+Analysis, which is splitted into three subsections such as
+pre-processing (face detection, dimension reduction, and nor-
+malization), feature extraction, and emotion classiﬁcation.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+The detailed taxonomy for FER is shown in FIGURE 5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A. FACIAL DETECTION, DIMENSION REDUCTION, AND
+NORMALIZATION
+In this section, we discuss the various face detection, dimen-
+sion reduction, and normalization techniques that are widely
+used in FER models.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"We also highlight and compare the
+various face detection techniques proposed by different
+researches.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Table 5 shows the comparison of various state-
+of-art detection techniques available in existing literature.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"1) VIOLA-JONES FACE DETECTION ALGORITHM
+Viola-Jones is extensively used to perceive the face from an
+image.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The training time of this algorithm quite long, but face
+identiﬁcation is fast.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It needs the full front view of the face as
+90502
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 5.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+The proposed taxonomy for facial sentiment analysis.,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+TABLE 5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+A relative comparison of various state-of-the-art facial detection techniques.,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+an input image.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It has four stages, such as haar-like features,
+integral graphs, AdaBoost training, and cascading classiﬁer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Haar-Like Features: Viola-Jones algorithm uses Haar-
+like features, 1.e., a scalar product between the image
+and some Haar-like templates [82].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"As shown in FIG-
+URE 6, edge features, linear features, center features,
+and diagonal features are the four Haar features used
+in Viola-Jones face detection algorithm [83].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"There are
+two regions, as shown in the ﬁgure, black shaded and
+white shaded regions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The eigenvalue is calculated using
+the difference between those two regions for linear fea-
+tures [83].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"eigenvalue(v) =
+X
+white
+−
+X
+black
+(1)
+eigenvalue(v) =
+X
+white
+−2 ×
+X
+black
+,
+(2)
+• Integral Graph: As the dimension of the generated Haar
+feature is large, a technique called integral map can be
+used to isolate the picture cells, such as 2D coordinates
+of the gray-scale picture and the estimations of every
+pixel point [83].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The procedure to make an integral graph
+is that each pixel is made equivalent to the total of all
+pixels above and to one side of the concerned pixel.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Henceforth, the total of all pixels in the rectangle shape
+is determined.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• AdaBoost Training: This training algorithm is a weak
+classiﬁer and is made to learn multiple times to become
+good.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The two things that we need to consider for the
+classiﬁcation of an image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"First, the locale of the eyes
+is darker than the district of the nose and the cheeks,
+whereas the other thing is, eyes should be darker than
+nasal scaffold [75].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"VOLUME 8, 2020
+90503
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 6.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Four different types of Haar-like feature representations [83].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Cascading Classiﬁers: We can classify the face or not
+a face in a single image using a single classiﬁer, but
+the result of that might not reach our expectations.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"So,
+in Viola-Jones, we use cascading classiﬁers to make this
+classiﬁcation accurate.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Stages of the cascading classiﬁer
+is shown in FIGURE 7.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"If one of the stages fails, then the
+image is not a face, but if it successfully reaches the last
+classiﬁer, then the image is classiﬁed as a face and store
+it into the corresponding database.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Viola-Jones is not capable of handling occlusion and rigid
+objects.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"So the algorithm might generate false detection of
+face.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"To overcome this issue, the authors in [83] proposed
+the modiﬁed Viola-Jones algorithm using composite fea-
+tures.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The procedure to detect the face using the modiﬁed
+Viola-Jones algorithm is as follows.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• A rectangular frame of the face is determined using
+Viola-Jones.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• The face in the rectangular frame is then calibrated and
+handled into four sorts of sub-images.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• The features are extracted from the acquired face and
+four sub-images using Zero/Null Space Linear Discrim-
+inant Analysis (NLDA).",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"• Then, the extracted features are evaluated by using dis-
+criminant distance.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Now new composite feature vectors are generated from
+the discriminant values and then they are fed to a classi-
+ﬁer for face recognition.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2) PRINCIPAL COMPONENT ANALYSIS
+The fundamental thought behind the PCA is that multi-
+attribute data is projected onto a linear lower-dimensional
+space.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+This subspace is known as the principal subspace.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+human face can be recognized using eigen face.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Eigen space
+(the basis of faces) is a set of eigen vectors (the covariance
+network of the face space) is to classify the faces according
+to their basis representation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Steps to create the eigen faces
+are described as follows.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Provide a training set of faces with pixel resolution of
+w × h.
+• Then the mean is calculated and subtracted from each
+image in the matrix.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Weight of the kth eigen face is
+wk = V T
+k (U −M), // where Input image vector U ∈Rn
+(training set) and mean M.
+Then W = [w1, w2, .",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+", wk, .",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+", wn]
+• Calculate Euclidean distance (D) of Wx and W.
+• After calculating Euclidean distance, the image is clas-
+siﬁed as face or not a face.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Islam et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[84] used PCA to reduce the redundant features.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They have used downsampling to eliminate the number of
+redundant features.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Consider the size of an image as (m × n).,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The size gets (40 × m × n) after ﬁltering its size, but after
+downsampling its size reduced to (10 × m × n), i.e., the
+dimension is reduced by a factor of 4.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Later, Luo et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[85]
+used PCA to extract global features from an image that are
+important, but they can be environment-sensitive for facial
+expression.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To overcome such issue, some local features are
+also selected using LBP.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"3) LINEAR DISCRIMINANT ANALYSIS
+LDA is the same as PCA, which is used to reduce the
+dimensions of a given data.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Like the eigenface in PCA, LDA
+FIGURE 7.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Cascading classifier.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"90504
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+TABLE 6.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Comparison of various state-of-art feature extraction techniques.,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"uses ﬁsher face (enhancement of eigenface) for reducing the
+dimensions of the features and the identiﬁcation of face in an
+image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Fisher’s face is usually used when the images have a
+contrast in illumination.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Various steps to create the ﬁsher face
+is same as PCA and performs better than PCA [86].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+B.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"FEATURE EXTRACTION
+This section discussed the various feature extraction tech-
+niques and explained how they could be used in FER models.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"We also compare the various Feature Extraction techniques
+and also analyzed various works done using the various tech-
+niques, as shown in Table 6.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"1) LOCAL BINARY PATTERN
+It is the recent texture descriptor that converts the value
+of the original pixel of the image with a decimal value
+and converts it into codes known as LBP codes [97]–[99].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Labels are formed by thresholding the 3 × 3 neighborhood
+with a central value and considers the result as a binary
+number.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"But the basic LBP had a limitation with large-scale
+structures and highly sensitive to noise [100], [101].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It is also invariant to the rotations and size of the fea-
+tures, which are increasing exponentially with the increase in
+neighbors.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A Uniform LBP was proposed that considers the U pattern,
+which has at most 2 bitwise transitions from 0 to 1.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"So, various
+extensions of the LBP were proposed for the neighborhoods
+of any size.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A circular neighborhood was proposed with any
+number of pixels and radius.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It is represented by the notation
+(P, R) where P means the number of sampling points on
+a circle of radius R. There are various applications where
+LBP is used, such as-texture analysis, face analysis, and
+classiﬁcation.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It codiﬁes the local primitives, including the
+edges, corners, different spots, and ﬂat areas.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Nowadays, LBP
+converts the important pixels of an image into a histogram
+which is known as the Histogram of Oriented Graph approach
+(HoG), that stores the information of local-micro patterns of
+the faces.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"VOLUME 8, 2020
+90505
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+A modiﬁed algorithm for LBP was proposed by the authors
+of [89].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+The steps for generating the threshold are as follows.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• The input preprocessed image is divided into 3 × 3
+blocks.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• For each block, calculate the minimum and maximum of
+block representing the pixel intensity value of the block.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Now, calculate the threshold value of block B by taking
+an average of both the minimum and maximum values.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• If any element of the block is greater than threshold, then
+write ‘1’ to it, else write ‘0’.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• The eight-bit pattern is converted to a decimal number,
+representing transformed block B.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2) GABOR FILTER
+It extracts both time and frequency domains [102] of the
+image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Means, it analyzes whether there is any particular fre-
+quency content in the image in a particular direction around
+the point of analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The use of 2D Gabor Filter is made in
+the spatial domain.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Gabor Filters is quite successful in FER
+models.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Multi-resolution structures are applied to images
+which consist of multi-frequencies and multi orientations.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+These structures relate Gabor Filters to wavelets [103].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The ﬁlters having real and imaginary components rep-
+resents the orthogonal directions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The equations are shown
+below [102]:
+9ω,θ(a, b) =
+1
+2πσaσb
+exp
+""
+−1
+2
+ 
+a
+′2
+σ 2
+a
++ b
+′2
+σ 2
+b
+!#
+exp
+
+jωa′
+(3)
+a′ = a cos θ + b sin θ
+(4)
+b′ = −a sin θ + b cos θ
+(5)
+where (a,b) is the pixel position in the spatial domain, θ is the
+orientation of Gabor ﬁlter, ω is the radial central frequency
+and σ is the standard deviation of the Gaussian Filter which
+means it controls the size of the Gabor Envelope.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Liu et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[87] proposed in his paper the local Gabor ﬁlter
+bank LG (m × n) which spreads all over.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It also contains
+multi-scale information of features those having a global
+ﬁlter or the image as well as it also reduces the redundancy in
+eigen values.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+This reduces the time for extracting the features.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[84] used a Gabor Filter bank with eight orientations and
+ﬁve scales.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The formed bank is used to ﬁlter the generated
+divided images 40 times each.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This created a computational
+burden from them, so they reduced the number of features by
+dimension reduction techniques.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Dimension reduction using
+PCA is explained under section PCA.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"3) DISCRETE COSINE TRANSFORM (DCT)
+A ﬁnite sequence of data or feature points as the sum of
+cosine functions are oscillating at different frequencies is
+represented by DCT.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It is a way to compressing the data/
+2D-image without losing its original meaning [104].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"In such
+type of applications (data compression), an input of 8 × 8
+size is used for DCT [105] for feature extraction.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It has
+two stages:
+• The ﬁrst stage is to apply DCT on the image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+• The second step is the selection of co-efﬁcients [106].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"By applying DCT on an U × V image then a 2D U × V
+co-efﬁcient matrix is formed.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Gx(0) =
+√
+2
+M
+M−1
+X
+m=0
+X(m)
+(6)
+Gx(k) = 2
+M
+M−1
+X
+m=0
+X(m) cos (2m + 1)k5
+2M
+,
+(7)
+where
+k = 1, 2, .",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+", (M −1)
+(8)
+where
+Gx(k)
+is
+the
+kth
+DCT
+co-efﬁcient
+[107].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Jayalekshmi et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[75] in their work have used DCT over
+ﬁxed discrete sequences to convert the data into elementary
+frequency components.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"4) SCALE INVARIANT FEATURE TRANSFORM (SIFT)
+It transforms the input image data into scale-invariant co-
+ordinates relative to the local features and stored into a
+database [108].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"SIFT features are highly distinctive i.e., it
+can match a single feature with a large probability from
+the database.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"SIFT also features scale and rotation invariant,
+which means that even if we scale or rotate the image, the fea-
+tures remain preserved.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This is useful in FER when a rotated
+image comes as an input.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"If we rotate the image, then also
+the features are maintained, and we can get those features
+efﬁciently [109].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The stages of the SIFT procedure are as
+follows.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Scale-Space Extrema Detection: The ﬁrst stage searches
+all image locations and scales using the Gaussian
+method.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Keypoint localization: It determines the location and
+scale at each point of the image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Orientation Assignment: Rotation Invariance is per-
+formed by assigning one or more dominant orientations
+to each key point.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Keypoint Descriptor: A descriptor is made to represent
+each keypoint, which supports the assigned orientation
+in the preceding stage.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It supports the histogram of the
+gradient within the image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The changes in illumination
+are scaled back by the descriptor to the key point.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"When
+the keypoint descriptors are received, they are often used
+as a feature or keypoint for data to solve various prob-
+lems.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"More detailed information on SIFT computation
+are often found in [110], [111].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Kravets et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[90] proposed P-SIFT (Parallel SIFT) algo-
+rithm, which reduces the computation time and increases the
+processing speed.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In P-SIFT, the problem is divided into sub-
+tasks, and multiple processors are used for feature extraction.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The program reads the input image and generates the key
+points.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After that, it matches the key points with respect to
+each image in the database.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Matching is done using Euclidean
+distance.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The images that have a ratio of ﬁrst least distance
+to the second least distance is less than 0.8 are taken into
+90506
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+consideration.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Then the image is given to the classiﬁer that
+classiﬁes the emotion [112].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A newly adapted method of SIFT to extract features from
+an image called IntraFace was proposed in [91].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It uses
+multi-directional warping of active visualization model and a
+supervised descent model [113], which uses the SIFT feature
+extraction technique for feature mapping and trains a method
+to extract 49 points from the image.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"These points are used for
+registering an average face, which is then termed as the face
+region.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5) SPEEDED UP ROBUST FEATURES (SURF)
+Speeded Robust Features is a type of local feature detector
+as well as descriptor.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It is inspired from SIFT and the authors
+claim that it is faster than SIFT.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Around the interesting point,
+a certain reproducible orientation is ﬁxed based on infor-
+mation from a circular region.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"From this selected orienta-
+tion, we make a squared region, and the SURF descriptor
+is extracted [114].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The SURF has two parts (i) a detector
+and (ii) a descriptor.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The location of the key points of the
+image is provided by the detector and the descriptor expresses
+the features of those key points.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"SURF uses Hessian matrix
+for the fast assessment of box ﬁlters.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The integral images are
+expressed as
+J(p, q) =
+p
+X
+l=0
+q
+X
+j=0
+I(l, m)
+(9)
+The Hessian matrix is represented as:
+H(X, σ) =
+Oaa(M, σ)
+Oab(M, σ)
+Oab(M, σ)
+Oab(M, σ)
+
+(10)
+The introduction of pyramid scale space is done in SURF
+because of box ﬁlters.",0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+"The descriptor makes use of the sum
+of Haar wavelet features that increases the robustness and
+decreases the computation time.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"For extraction, it constructs
+a square region around the keypoint and oriented along the
+orientation decided by a method.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Each region is split into 4×4
+sub-regions, which keeps the important spatial features.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+Haar wavelet computes at 5 × 5 sampled points [88].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"6) HISTOGRAM OF ORIENTED GRADIENTS (HOG)
+The features extracted by HoG are tough against photometric
+and geometric deviations.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Many applications use HoG as the
+feature extraction technique, such as human detection [110].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The steps to calculate these features are:
+• In the ﬁrst step, it divides the entire image into small
+cells.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Then, its direction and the magnitude is calculated.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Calculate the Bin for each direction as well as magnitude
+using HoG.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• The blocks from adjacent cells are calculated, and block
+normalization are created to calculate feature vector
+from it.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"During implementation, 9 bins of histogram were calculated
+using the cells of 8 × 8 pixels and blocks of 2 × 2 pixels
+FIGURE 8.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Traditional CNN architecture.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+with unsigned orientation.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Reference [115] used a fusion of
+HoG and LBP features.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Firstly, the HoG and LBP features
+were extracted from the segmented parts.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The ﬁnal feature
+vector consists of both the features of HoG and LBP, which
+had 1892 features out of which 1656 came from HoG while
+the rest came from LBP.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"C. EMOTION CLASSIFICATION
+In this section, we discuss the various Classiﬁcation tech-
+niques that are used to classify human face emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"We also
+presented a comparative analysis of various emotion classiﬁ-
+cation techniques, as shown in Table 7.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"1) CONVOLUTIONAL NEURAL NETWORK (CNN)
+CNN is most widely used architectures in computer vision
+techniques as well as in machine learning [130].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"A massive
+data is required for training purpose to harness its complex
+functions solving ability to its fullest [131].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"CNN uses con-
+volution, min-max pooling, and fully connected as layers
+than the conventional fully connected deep neural network
+[53], [132], [133].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"When all these layers are stacked together,
+the complete architecture is formed.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The complete architec-
+ture of CNN is shown in FIGURE 8.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+• The input layer of CNN contains the image pixel values.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"• The Convolutional layer convolves the l ×l kernels with
+x feature maps of its preceding layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"If the next layer has
+feature maps, then n×m convolutions are performed and
+n × m × (w × h × l × l) Multiply-Accumulate (MAC)
+operations are needed, where h and w represents the
+feature map height and width of the next layer [132].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+important function of Convolutional layer is to calculate
+the output of all the neurons which are connected to
+the input layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The activation functions such as ReLu,
+sigmoid, tanh etc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"aim to apply element wise activation
+and to add the non-linearity into the output of neuron
+• The pooling layer has the responsibility to achieve spa-
+tial invariance by minimizing the resolution of feature
+map.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"One feature map of the preceding CNN model
+layer is corresponding to the one pooling layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"1) Max Pooling: It has a function u(x,y) (i.e., window
+function) to the input data, and only picks the most
+VOLUME 8, 2020
+90507
+K. Patel et al.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+TABLE 7.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Comparison of various state-of-art emotion classification techniques.,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+active feature in a pooling region [134].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The max
+pooling function is as follows:
+aj = max
+N×N(an×n
+i
+u(n, n))
+(11)
+2) Average Pooling: It has a function u(x,y) (i.e., win-
+dow function) to the input data, and selects the
+average value for each input data on the preceding
+layer feature map [135], [136]
+acti =
+1
+M × M
+M×M
+X
+J=1
+xj
+(12)
+Mostly, 2 × 2 pooling can be used without overlapping.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+This means that M in the above equation is always 2.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"And the large pooling has M value as 4, 8, 16, which
+always have a dependency on input image size.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"So,
+[136], in their paper, proposed a Multi-activation pool-
+ing method in order to satisfy the need of a large pooling
+region.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"This method allows top-p activations to pass
+through the pooling rate.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Here p indicates the total num-
+ber of picked activations.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"If p = M × M, then it means
+that each and every activation through the computation
+contributes to the ﬁnal output of neuron [136].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"For the
+random pooling region Xi, we denote the nth-picked
+90508
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+activation as actn
+actn = max
+
+Xi2
+n−1
+X
+j=1
+actj
+
+
+(13)
+where the value of n ∈[1,p].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The above pooling region
+can be expressed as below where symbol 2 represents
+the removal of elements from the assemblage.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The sum-
+mation character in Eq.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"13 represents the set of elements
+that contains top1 (n-1) activation, but not adding the
+activation values numerically.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After having the top-p
+activation value, we simply compute the average of each
+value.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Then, a hyper-parameter σ is taken as a constraint
+factor which perform the multiplication of the top-p
+activations [136].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The ﬁnal output refers to
+output = σ ∗
+p
+X
+j=1
+actj
+(14)
+Here, the summation symbol represents the addition
+operation, where σ ∈(0,1).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Particularly,if σ = 1/p,
+the output is the average value.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The constraint factor,
+i.e., σ can be used to adjust the output values [136].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• Fully connected (FC) layer is the last layer of CNN
+architecture.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"It is the most fundamental layer which is
+widely used in traditional CNN models [137], [138].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"As it is the last layer, each node in it is directly connected
+to each and every node on both sides.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"As shown in
+FIGURE 8, it can be noted that all the nodes in the
+last frame of the pooling layer are converted into a
+vector and then are connected to the ﬁrst layer of the
+fully-connected layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are many parameters used
+with CNN and need more time for training [139], [140].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"The major limitation of FC layer, is that it contains a
+large number of parameters that need complex compu-
+tational power for training purposes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Due to this, we try
+to reduce the number of connections and nodes in the FC
+layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The nodes and connections which are removed can
+be retrieved again by adding the new technique named
+dropout technique.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"In the past few years, CNN has emerged in Computer Vision,
+including the ﬁeld of facial sentiment analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Researchers
+have modiﬁed the traditional CNN for better performance.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+A modiﬁed CNN was proposed by Mollahosseini et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"[91]
+in which an inception layer was introduced.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Their network
+architecture consisted of two elements.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Firstly, it had two
+traditional CNN architectures containing the Convolutional
+layer, followed by ReLu.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Following these modules, they
+added two inception layers which consists of 1 × 1, 3 × 3
+and 5 × 5 Convolutional layers with ReLu in parallel.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"By
+slightly
+modifying
+the
+traditional
+CNN,
+Khorrami et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"[120] developed the model based on a classic
+feed-forward CNN.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"They introduced a modiﬁcation in their
+model by ignoring the biases of the Convolutional layers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+network contained three convolutional layers having ﬁlters
+of size 64, 128, and 256, respectively, with 5 × 5 sized
+d ﬁlters, which were then followed by activation function
+ReLu.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They placed max-pooling layers after each of the 1st
+two Convolutional layers, and after the 3rd convolutional
+layer, they placed the quadrant pooling layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Then after
+convolutional layers, FC layer containing 300 hidden units
+followed by quadrant pooling was used.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"At last, the softmax
+layer was used for classiﬁcation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The idea of using zero-bias model was ﬁrst introduced
+in [141] for the fully-connected layers in the CNN model and
+later was extended in [142].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"They implemented this model
+on CK+ and TFD datasets.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Their model was successful in
+recognizing the emotions with the rate of 88.6% ± 1.5% on
+TFD with 7 classes and 95.1%±3.1% on CK+ with 8 classes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They used Data Augmentation combined with dropout to
+boost the performance [120].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Further, the increase in accuracy and recognition perfor-
+mance of the computer vision algorithms researchers pro-
+posed advanced and deeper CNN architectures.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Taking into
+consideration the work of Ding et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[77] designed a new
+technique named FaceNet2ExpNet to train the model.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They
+used a ﬁne-tuned face net and proposed a unique distribution
+function to train neurons of expression net.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To improve the
+discriminativeness of features that were learned, they used the
+conventional network to design the ession net.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The training
+process was executed in the two levels.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In 1st level, the Con-
+volutional layers were given training using loss function, and
+the output of the last pooling layer was used for supervision.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In the 2nd stage, they added randomly initialized FC layer and
+then trained the network using labeled training data.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The test-
+ing was done on constrained as well as unconstrained datasets
+and achieved better results than the previous approaches [77].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"In 2018, Jadhav et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[54] investigated the previous
+approaches and applied modiﬁcations to increase perfor-
+mance.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They investigated three different popular networks
+that were quite successful in classifying emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The ﬁrst
+network was proposed by Krizhevsky and Hintion [143].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The second network for investigation was inspired by
+AlexNet [138] Convolutional network and the last one was
+proposed from work done by Gudi [144].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It consisted of
+an input layer of 48 × 48, one Convolutional layer, nor-
+malization layer to reduce normalize dimensions, and then
+a max-pooling layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Then again, 2 Convolutional layers
+and then ﬁnally 1 FC layer, linked with the softmax layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To decrease the number of parameters, [54] applied one
+more max-pooling layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They trained and tested the model
+on FER2013 and RaFD respectively and got better results
+than [144].",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+Cai et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"in [123], introduced a new island loss layer
+in CNN to minimize intra-class variations.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Their network
+includes 3 Convolutional layers, each followed by the PReLU
+and batch normalization (BN) layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pooling was used with
+the two initial BN layers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After the third Convolutional layer,
+2 FC layers and island loss was calculated at the second FC
+layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"And then, at last, the softmax layer was used.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Their
+architecture was named IL-CNN.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"They also employed VGG-
+16 [145] network as their backbone network.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This approach
+VOLUME 8, 2020
+90509
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 9.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+A conventional VGG16 architecture.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"achieved good performance in comparison to the state-of-art
+methods.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"In 2012, Simonyan et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[145] proposed VGG16 architec-
+ture for object recognition and classiﬁcation task.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"VGG16 has
+replicative structure of convolution, ReLu and pooling layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+The network architecture of VGG16 is shown in FIGURE 9.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The invention of Residual Networks has created a rev-
+olution in the image recognition ﬁeld.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Residual Networks
+(ResNet) [146] is a classic network used as a backbone for the
+many computer vision tasks.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"ResNet50 is the current state of
+art convolutional neural network, which has the identity map-
+ping capability.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+It introduced the concept of skip connections.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Traditional CNN was successful in FER to some extent, but
+there were various limitations too.",1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Those limitations were:
+• It requires a considerable skills and high experience in
+selecting the appropriate hyper-parameters values for
+CNN [121].",1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"• It used a stochastic gradient descent method, which
+caused trouble in mounting to enormous data and also
+in learning NN with multiple layers.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"It is because the
+gradients tended to decrease and also because of the
+problem of ‘‘vanishing gradients’’ [121], [147].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"• The last one was for real-time environments, CNNs for
+human facial appearance was easily affected by various
+parameters like age, gender, face length, hair, mustache,
+and ethnicity [148].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Due to this, facial expressions had
+overlapping features, which makes its implementation
+difﬁcult and complex [121], [149].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"To overcome these barriers, ensemble learning was applied
+because it helped in more accurate classiﬁcation and pre-
+diction by concatenating the outputs of the base learning
+approaches.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"So, Dhankhar [124], [150] developed an Assem-
+ble model by combining the state-of-the-art DL approaches
+such as VGG16 and ResNet50.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"He attempted to obtain a
+vector of weights from the second to last layers, which can
+be treated as feature vectors, which represented the latent
+representations of the input image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Then, he combined above
+mentioned representations by joining the feature vectors, then
+it can be taken as input to logistic regression models to
+calculate the ﬁnal emotion prediction [124].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After applying
+transfer learning, he trained and tested his model on Karolin-
+ska Directed Emotional Faces (KDEF) dataset and got better
+accuracy compared to individual models.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Another Ensemble network was proposed by Wen et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[121] where they ensembled CNN with probability-based
+fusion for FER [151].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"For each ensemble method, the mul-
+tiplicity and diversity in the classiﬁers is considered as a
+major concern in achieving comparable performance [152].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The CNN architecture was implemented using ReLU and
+multiple hidden layers (maxout layer) with random values for
+them to overcome the problem of calculating the stochastic
+gradient descents.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"They used Softmax classiﬁer at the last
+in order to roughly calculate the possibility to test sample
+to each class [121].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They trained and tested the model on
+FER2013 and CK+ datasets, respectively and the accuracy
+was 76.05%, which was better than other methods.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Thus
+it can be concluded that ECNN consistently outperformed
+traditional CNN.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+Alessandro Renda et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[125] proposed a feed-forward
+CNN, which was inspired by Kim et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"[153], in which
+three convolutional and max-pooling layers with 32, 32 and
+64 feature maps respectively were placed after input layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They used an ensemble learning approach to increase perfor-
+mance.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"These max-pooling layers consist of an overlapping
+kernel with size 3 × 3 and stride of 2 × 2, which results in
+size halving.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"They added a dropout layer after FC hidden
+layer, having 0.15 as drop probability.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A FC layer with almost
+1024 neurons was proposed to yield 7 classes of emotion
+in the FER2013 dataset.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Their model has a network depth
+of 5 with 2,436,007 trainable parameters.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They used ReLU
+(Non-linear function) as an activation function for both the
+convolutional and FC layers to remove non-linearity and the
+90510
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+softmax function at the output layer.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They used the batch
+normalization [154] with each convolutional layer as well as
+the FC layers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To preserve the data, they used zero-padding
+in the convolutional layers.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"They achieved an accuracy of
+approx.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+72.249 % with the ensemble of 9 networks.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To solve the problem of poor performance in real appli-
+cations caused because of the stored facial images that most
+of the time show expression not as a single emotion but
+represents a multiple emotions, Gan et al.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"[126] designed an
+approach using CNN and soft label which associates with
+multiple emotions and expressions.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They obtained the soft
+labels using constructor involving 2 step scheme:
+1) The initial step is to prepare a CNN model with hard
+data labels for supervision and the softmax function for
+optimization.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"2) The second step is to fuse the possibility of prediction
+to get soft labels from the pre-trained models [126].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Their architecture is similar to VGG16, however, the last FC
+layer is adjusted as C-way yields, where quantity C is the
+number of emotion classes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Zadeh et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[127] proposed a DL model having a CNN
+layer and 2 Gabor Filters to classify different human sen-
+timent.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"This model uses a feature selection method called
+Gabor Filter, which is commonly applied for texture outline.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+It returns where there is any texture change in the image.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Then these features are fed to a CNN (Convolutional Neural
+Network) for the classiﬁcation of human sentiment.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Their
+model has the following stages- Input Images, resize, 1st
+Gabor Filter, 2nd Gabor Filter, CNN layer, and classiﬁcation
+of sentiments.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+They tested their model on the JAFFE dataset.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"They also compared the dataset classiﬁcation using simple
+CNN and its model (CNN with 2 Gabor Filters).",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"They trained
+them for 30 epoch and got an accuracy of 91.16% on simple
+CNN and 97.16% on their model [127].",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"2) SUPPORT VECTOR MACHINE (SVM)
+SVM is a classiﬁer [155] was designed for classifying out
+of two classes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"If the SVM has more than two classes, then
+more than one SVMs is to be implemented.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are three
+methods by which we can implement SVM for more than two
+classes.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+• One versus all: It was proposed in [156].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It constructs
+k SVM models for training data having k number of
+classes.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"If there are three classes, then SVM can be
+performed three times for every class [157].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+• One versus one: It was introduced in [156].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This method
+constructs k(k −1)/2 classiﬁers, where two classes at
+a time are taken to train the model.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"In this method,
+SVM is performed between every class that is to be
+classiﬁed [157].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• Directed Acyclic Graph SVM (DAGSVM): It was pro-
+posed in [158].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Its training phase is similar to one-vs-one
+method.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The testing phase makes use of a rooted binary
+DAG having at the most k(k−1)/2 internal nodes and the
+maximum k leaves.",0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
+"An advantage of using a DAGSVM
+is that is to generalize the analysis [158].",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The aim of SVM is to identify the maximum margin plane
+between the classes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The maximum margin plane can be
+obtained from the maximum distance between the positive
+and the negative margin plane, respectively of the two classes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The distance between the separating plane and the positive
+margin plane should be equal on both sides.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"To solve the problem of recognizing emotions from facial
+expressions in a simple and speeded manner, Datta et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[122]
+presented a classiﬁcation system that used the concatenation
+of geometric as well as texture-based features to classify the
+emotions using SVMs.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They have used the hierarchical SVM
+architecture to leverage the beneﬁts of multi-class binary
+classiﬁcation.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+CK+ dataset was used for classiﬁcation.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"They
+have achieved the signiﬁcant enhancements in the accuracy
+using hybrid SVM features compared to LBP features.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+Nuno Lopes et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[78] in 2018 given a classiﬁcation model
+for FER in the elderly and also present the differences of FER
+in the elderly and other age people.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They used the Support
+Vector Machine with a multi-class classiﬁcation for classi-
+fying the emotions [159].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They proposed two architectures,
+the ﬁrst approach removes the wrinkles, nasolabial fold, and
+other facial features, using edge-preserving smoothing tech-
+niques.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"While in the second architecture, they introduced an
+algorithm from API Microsoft, which detects the age of the
+person.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The lifespan dataset was used to train and test the
+multi-class SVM.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"They used 80% images to test the accuracy
+of the SVM and 20% to test the accuracy of the application.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"They got an accuracy of 95.24% in the young age group and
+accuracy of 90.32% in the elderly age group.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"SVM is a linear classiﬁer that can be applied for linearly
+separable data.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"But SVM can take high dimensional data as
+input also which most of the time is non-linear data.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"So a
+mapping function is applied to the SVM training, which is
+non-linear and converts the data into linearly separable but in
+a higher dimension.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+This function is called a kernel function.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are various kernel functions, but [85], in his paper, used
+Radial Basis Kernel Function(RBF).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They used one versus
+one approach in this paper.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Ibrahim Adeyanju et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[118] proposed a method in which
+he used four SVM kernels to classify different emotions of
+faces.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They used a Radial Basis, Polynomial, Linear, and
+Quadratic functions as SVM kernels.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They tested their model
+on 467 training and 238 test sets to classify 7 emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They
+got a maximum average accuracy of 86.4% on RBF kernel,
+99.33% on Quadratic function, 97.65% on Polynomial, and
+97.86% on Linear.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"3) ARTIFICIAL NEURAL NETWORK (ANN)
+ANN is inspired by the biological neural networks that consti-
+tute the brain [160].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Our brain consists of millions of neurons
+that form a neural network.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"These neurons are interconnected
+with each other and process the signals to/from the brain to
+the other parts of our body [161].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This type of link is called
+synapses.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are approximately 100 billion neurons and
+are interconnected by thousands or more synapses.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In ANN,
+the signal is a real or binary number and the output of these
+VOLUME 8, 2020
+90511
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 10.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"W.S McCulloch and W. Pitts proposed a single neuron model
+as a mathematical model for an artificial neuron [160].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"neurons is obtained by some activation function of the sum
+of all inputs to that neuron [160].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The connection between
+two neurons/nodes is called an edge.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This edge has a weight,
+which describes how intensive the signal is.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Normally, neu-
+rons are aggregated into layers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The ﬁrst and last layer
+is the input and output layer, respectively.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The in-between
+layers are called the hidden layers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A simple perceptron
+model given by W.S McCulloch and W. Pitts is shown in
+the FIGURE 10.
+net =
+
+
+n
+X
+j=1
+wjxj−u
+
+
+(15)
+y = θ (net)
+(16)
+θ(x) =
+1
+1 + exp (−x)
+(17)
+where n inputs are given to the neuron x1, x2, ..., xn,
+weights are assigned to edges as w1, w2, ..., wn, θ is
+the step function before calculating the output O.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The pos-
+itive weights correspond to excitatory synapses and nega-
+tive as inhibitory synapses.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The activation function is the
+sigmoid function.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"This model does not possess the actual
+behavior of biological neurons.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Talele et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[119] pro-
+posed a model using the General Regression Neural Net-
+work (GRNN) based on ANN to classify emotions from
+the image.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The proposed model has the following features-
+Input layer goes about as feed to the subsequent layers.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+pattern layer decides the Euclidean distance and activation
+function.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The summation layer comprises of the numerator
+and the denominator part took care of by the output layer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The fundamental principle on which the system works is the
+joint likelihood estimate of the input and the output as given
+below
+f (x, y) =
+1
+(2π)
+d+1
+2
+×1
+n
+X
+exp (x −xi)r(x −xi) + (y −yi)2
+2σ 2
+(18)
+where n is the number of watched tests, σ is the spread
+parameter, xi is the ith training vector, xi is the corresponding
+yield esteem.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The physical interpretation of the likelihood
+estimate is that it assigns test likelihood of width σ for each
+input and output test.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"4) DEEP BELIEF NETWORK (DBN)
+A probabilistic and unsupervised DL algorithm which
+comprises of numerous stochastic dormant factors.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"These
+Idle factors are likewise called as feature locators.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"It is a
+hybrid graphical model that has two undirected upper layers,
+while lower layers have directed connections [162].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"DBN
+consists stack of Restricted Boltzmann Machine(RBM) or
+Auto-encoders.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+They represent a data vector.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The two most
+important properties of DBN are:
+• It utilizes layer by layer learning approach that decides
+how the loads rely on the layer above it, a top-down
+approach.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"• A single bottom-up pass layer which begins with
+observed data vector and furthermore that utilizations
+loads in separate layers give the estimation of latent
+variables [163].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Deep Belief Network is pre-trained using the Greedy
+algorithm.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"In greedy algorithms, we train each layer,
+in turn, in unsupervised learning.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The multi-layer DBN is
+divided into various RBMs, which are learned sequentially.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Pre-training is done for better optimization.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Fine Tuning is
+done because the features are modiﬁed so that we can get the
+category boundaries right [164].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Lui et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[116] proposed a novel model named Boosted
+Deep Belief Network to implement FER with performance
+enhancement.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+Their Framework has three main contributions.,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"First, they build the model, which consists of three-stage
+training of feature learning, feature selection, and classiﬁer
+construction.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Secondly, their proposed work facilitated the
+part-based representation and not the whole facial region as
+input, which is highly suitable for expression analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"At last,
+they proposed a discriminative DL framework where multiple
+DBNs are integrated and a boosting technique is also applied.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"They used an experimental dataset named CK-DB prepared
+from the ﬁrst and last three frames of the famous CK+ dataset
+with a total of 1308 images.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The accuracy of the model was
+found to be 96.7%.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+Kurup [128] used ﬁve layers.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The input layer has two
+nodes.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+All classes are represented as 4-bit codes.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"All other
+layers have 3,3 and 4 nodes and have a sigmoid activation
+function.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"An unsupervised approach is used to train the ﬁrst
+layer using contrastive divergence(CD) and then a softmax
+activation function is applied.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"At the end of the DBN, a ﬁne-
+tuning backpropagation procedure was applied.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"RBMs are
+trained layer by layer and each RBM was trained individually
+ﬁve times.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5 times k fold cross-validation was used and the
+training data was divided into 5 groups.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"With this model, they
+got an accuracy of 98.57% on the CK+ dataset while 98.75%
+on the MMI database.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"For the FER, Yadan Lv et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[117] had proposed an
+approach via DL.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Unconventional training of component
+detectors was done with DBN and was adjusted by logistic
+regression.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"After that, the parsed component features, includ-
+ing eyes, mouth are concentrated for expression recognition.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The main contributions of their work are, they were the ﬁrst
+90512
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 11.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+A typical RNN architecture.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"to use only facial components to recognize emotion, treated
+every single feature of parsed component equal and parse the
+face via DBN so that the images need not to be pre-processed
+before extracting features.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In simple words, their approach at
+ﬁrst detected the face, and then the nose, eyes, and mouth are
+used for expression recognition.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Emotion classiﬁcation was
+done by a stacked autoencoder classiﬁer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5) RECURRENT NEURAL NETWORK (RNN)
+They are an exciting twist to basic neural networks.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"RNNs
+can take a series of inputs with no initial limit on it.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They
+remember the past and make decisions based on past learning.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+RNNs remember the prior inputs while generating outputs.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"RNNs take at least one input vectors that produce output
+vectors impacted by hidden state vectors dependent on earlier
+sources of input and output, as shown in FIGURE 11.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They
+provide a smart method for managing the sequential data that
+gives co-relations between data points, which are close in the
+sequence [165].",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"The information captured by the RNN relies
+upon the structure and training algorithm it implements.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"[166] in his work used RNN by assuming the eucledian metric
+which Arecords the distance between two frame sequences.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They used RNN with one hidden layer consisting of 150 uni-
+directional Long-Short Term Memory fully interconnected
+cells.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+They give 1500 frame vectors to the input layer.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They trained the RNN with Adam Optimizer with learning
+rate = 0.0001.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Zhang et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[36] proposed a PHRNN (Part-based Hier-
+archical bidirectional Recurrent Neural Network) to classify
+the different facial emotions.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Their model extracts facial
+features using PHRNN, which extracts the temporal fea-
+tures and used a multi-signal CNN (MSCNN) to extract
+facial emotion features from the still frames.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Their model,
+Spatial-Temporal Network, mainly consists of PHRNN and
+MSCNN.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Their model has the following stages of interest-
+PHRNN, MSCNN, and Model Fusion.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"They tested their
+model on Oulu-CASIA, MMI and CK+.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Their model per-
+forms well on Oulu-CASIA, MMI and CK+ and diminishes
+the error rates from the early trial.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"They also compared differ-
+ent models- CNN, MSCNN, PHRNN-MSCNN (without sort-
+ing item), and PHRNN-MSCNN (with sorting item) with the
+assessed accuracy of 93.4, 95.7, 96.7, and 98.5 respectively.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"The results of their model were better than most of the other
+strategies.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"FIGURE 12 shows the comparative analysis of the accu-
+racies of various state-of-the-art approaches on different
+datasets.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+VI.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"OPEN ISSUES AND RESEARCH CHALLENGES
+FER has been an active research area in recent years.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There
+are various works that have shown tremendous results and
+classiﬁed the emotions accurately.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"Yet there are various chal-
+lenges and issues which are faced during facial sentiment
+analysis.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"In this section, we will discuss about various issues
+and challenges faced by FER.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"We analyzed various survey
+papers and understood the issues.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A. OCCLUSION AND OCCLUDED DATA COLLECTION
+It is the major obstacle that comes in the way of automatic
+facial expression.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Most of the current works are on the
+JAFFE, CK+ datasets without occlusion, and also with artiﬁ-
+cially occluded faces.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"There is a lack of datasets that include
+natural facial occlusion.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"So, there should be a creation of
+databases that has occlusion, which is a time-consuming and
+difﬁcult task to do.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Datasets should be prepared by deciding
+what or where the face should be occluded.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Certain crucial
+parts of the image should not have an occluded region.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The
+effective training and testing of the occluded dataset still
+remain a big challenge [4].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"It is still a challenging task to collect spontaneous expres-
+sions under occlusion.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The everyday human emotions such
+as happiness, surprise, and sadness can be easily evoked, but
+emotions such as curiosity, attentiveness are still difﬁcult to
+evoke, particularly under occlusion.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Therefore several strate-
+gies should be considered which induce emotions that are
+precise and contextual dependent [26].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"These strategies might
+bring challenges in implementation on selection and limit the
+types of occluded data collected.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"After the collection of the occluded dataset, it’s effective
+training, and testing remains a big issue.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The occluded region,
+the level of occlusion, the type of occlusion, the compo-
+nents, materials that are present in the occluded region pose
+a challenge for the FER System.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"One way to counter this
+challenge is to use raw pixels of the occluded region, but
+enough information on the speciﬁc features of the image may
+not be recorded.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Reliably determining the special parameters
+such as type, materials, components, location is a critical
+component of FER.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+There are many ways to detect occlusion in an image.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Still, the most current feature extraction techniques extract
+features from the face directly without passing through a
+pre-processing layer of occlusion detection.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Huang et al.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[167] in his work, showed that the accuracy is improved if
+we include a pre-processing layer for occlusion detection.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"B. DATASETS IN FER
+The other challenge in FER is the lack of proper training
+dataset in terms of both quality and quantity.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"The dataset
+VOLUME 8, 2020
+90513
+K. Patel et al.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+FIGURE 12.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Accuracy of proposed models on different datasets vs year.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"should include images of people of all age groups as different
+age groups exhibit emotions differently.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"There are datasets
+that have images of a particular age group, but no dataset
+has a mixture of all the age groups [7].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"This dataset, if devel-
+oped, would assist in developing research on cross-age, cross-
+culture, and cross-gender.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"C. FER ON 3D DATA
+The current research mainly focuses on 2D FER data, which
+faces challenges to illumination factors and pose variations
+[168].",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"3D face shape models are naturally robust to pose vari-
+ations and illumination factors.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[169] in his work, proposed
+CNN without facial landmark detection, which estimates
+expression coefﬁcients from image intensities.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Recently,
+many works have been proposed which combines both 2D
+and 3D data to improve the accuracy.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"D. DIFFERENT MODALITIES IN FER
+Facial Expression is only modality that can be used to recog-
+nize human behavior.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"The combination of other patterns like
+infrared images, capturing the information of 3D models, and
+physiological data is trending research area due to large com-
+plementary expressions.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Reference [170] employed various
+multi-modal affect recognition techniques.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"E. FER ON INFRARED DATA
+At present, the gray-scale and RGB colors are at the trend
+in the deep FER, but are more vulnerable to light effects.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"However, the infrared images records the emotions produced
+by skin distribution which are not subtle to the illumination
+variations.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In 2017, Wu et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[171] given a 3D CNN archi-
+tecture to fuse spatial and temporal features in FER images.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"F. VISUALIZATION TECHNIQUES
+Adding visualization techniques [172] over the CNN model
+results in a quantitative analysis of how it contributes to the
+visualization-based rule of FER and also ﬁgures out which
+part of the face has more discerning information.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Its results
+indicate the activations of ﬁlters with strong correlation to the
+face mark regions which correspond to a particular Action
+Unit.",0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0
+"In 2016, Mousavi et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[173] used the concept of
+visualization techniques and proposed a new visualization
+technique LIPNet.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"G. OTHER ISSUES
+Various other issues have risen based on the prototypi-
+cal expression categories, namely real versus fake emotion
+recognition challenge and complementary emotion recogni-
+tion problem.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Also, the apps for real-time FER is still a chal-
+lenging task [174].",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Many DL techniques have been applied
+regarding the above problems.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+VII.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"CONCLUSION
+This paper presents a detailed systematic survey to analyze
+current state-of-the-art approaches for facial emotion recog-
+nition in static images and various parameters that inﬂu-
+ence the results of these approaches.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"We have developed a
+taxonomy based on different methods used for face detec-
+tion, feature extraction, and emotion classiﬁcation.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Various
+facial expression databases used as input for the FER are
+discussed.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"We have reviewed previous works on this ﬁeld
+and concluded that much of the work had been done in this
+ﬁeld.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"We have compared various detection, extraction, and
+classiﬁcation approaches and concluded that which approach
+is more prominent in achieving better performance in avail-
+able computation power.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"By discussing current issues and
+research challenges in the future, we concluded that there is
+still much research needed in this ﬁeld, such as FER in 3D
+face shape models, recognizing emotion in images under
+occlusion, etc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Real-time FER is still a challenging task.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"In the
+future, we would like to survey the FER problem in videos
+using more advanced DL techniques.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"90514
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+REFERENCES
+[1] A. Kumari, S. Tanwar, S. Tyagi, and N. Kumar, ‘‘Fog computing for
+healthcare 4.0 environment: Opportunities and challenges,’’ Comput.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Electr.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Eng., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"72, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1–13, Nov. 2018.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[2] J. Hathaliya, P. Sharma, S. Tanwar, and R. Gupta, ‘‘Blockchain-based
+remote patient monitoring in healthcare 4.0,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IEEE 9th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(IACC), Dec. 2019, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+87–91.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[3] J. Vora, P. DevMurari, S. Tanwar, S. Tyagi, N. Kumar, and M. S. Obaidat,
+‘‘Blind signatures based secured E-Healthcare system,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., Inf.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Telecommun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(CITS), Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[4] L. Zhang, B. Verma, D. Tjondronegoro, and V. Chandran, ‘‘Facial expres-
+sion analysis under partial occlusion: A survey,’’ ACM Comput.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Surv.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"51, Apr.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2018.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[5] D. Matsumoto, ‘‘More evidence for the universality of a contempt expres-
+sion,’’ Motivat.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Emotion, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"16, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"363–368, Dec. 1992.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[6] T. Amano, ‘‘Coded facial expression,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+SIGGRAPH ASIA Emerg.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Technol., New York, NY, USA, 2016, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–2.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[7] S. Li and W. Deng, ‘‘Deep facial expression recognition: A survey,’’ 2018,
+arXiv:1804.08348.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: http://arxiv.org/abs/1804.08348
+[8] T. M. Abhishree, J. Latha, K. Manikantan, and S. Ramachandran, ‘‘Face
+recognition using Gabor ﬁlter based feature extraction with anisotropic
+diffusion as a pre-processing technique,’’ Procedia Comput.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Sci., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"45,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"312–321, Jan. 2015.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[9] R. Gupta, S. Tanwar, S. Tyagi, and N. Kumar, ‘‘Tactile Internet and its
+applications in 5G era: A comprehensive review,’’ Int.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+J. Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Syst.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"32, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"14, Sep. 2019, Art.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+no.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+e3981.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[10] R. Gupta, S. Tanwar, S. Tyagi, N. Kumar, M. S. Obaidat, and B. Sadoun,
+‘‘HaBiTs: Blockchain-based telesurgery framework for healthcare 4.0,’’
+in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., Inf.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Telecommun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(CITS), Aug. 2019,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[11] J. Vora, A. Nayyar, S. Tanwar, S. Tyagi, N. Kumar, M. S. Obaidat,
+and J. J. P. C. Rodrigues, ‘‘BHEEM: A blockchain-based framework for
+securing electronic health records,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"IEEE Globecom Workshops
+(GC Wkshps), Dec. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[12] J. J. Hathaliya, S. Tanwar, S. Tyagi, and N. Kumar, ‘‘Securing electronics
+healthcare records in healthcare 4.0 : A biometric-based approach,’’
+Comput.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Electr.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Eng., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"76, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"398–410, Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2019.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[13] S. Tanwar, K. Parekh, and R. Evans, ‘‘Blockchain-based electronic health-
+care record system for healthcare 4.0 applications,’’ J. Inf.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Secur.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Appl.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"50, Feb. 2020, Art.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+no.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+102407.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[14] R. Gupta, S. Tanwar, F. Al-Turjman, P. Italiya, A. Nauman, and
+S. W. Kim, ‘‘Smart contract privacy protection using AI in cyber-
+physical systems: Tools, techniques and challenges,’’ IEEE Access, vol.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"8,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"24746–24772, 2020.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[15] G. Hemalatha and C. P. Sumathi, C. P, ‘‘A study of techniques for facial
+detection and expression classiﬁcation,’’ Int.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+J. Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Sci.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eng.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Surv.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"27–37, Apr.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2014.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[16] D. Deodhare, Facial Expressions to Emotions: A Study of Computational
+Paradigms for Facial Emotion Recognition, New Delhi, India: Springer,
+2015, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+173–198.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[17] U. Asad, N. Kashyap, and S. N. Singh, ‘‘Recent advancements in facial
+expression recognition systems: A survey,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput.,
+Commun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCCA), May 2017, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1203–1208.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[18] A. Baskar and T. G. Kumar, ‘‘Facial expression classiﬁcation using
+machine learning approach: A review,’’ in Data Engineering and Intel-
+ligent Computing.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Singapore: Springer, 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+337–345.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[19] K. Chengeta and S. Viriri, ‘‘Facial expression recognition: A survey on
+local binary and local directional patterns,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Collective Intell.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Cham, Switzerland: Springer, 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+513–522.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[20] G. Rajeswari and P. IthayaRani, ‘‘Literature survey on facial expression
+recognition techniques,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+3rd Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Electron.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCES), Oct. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+137–142.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[21] B. Martinez, M. F. Valstar, B. Jiang, and M. Pantic, ‘‘Automatic analysis
+of facial actions: A survey,’’ IEEE Trans.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Affect.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"10, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"3,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"325–347, Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2019.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[22] S. Bhattacharya and M. Gupta, ‘‘A survey on: Facial emotion recognition
+invariant to pose, illumination and age,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2nd Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Paradigms (ICACCP), Feb. 2019, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[23] A. S. Vyas, H. B. Prajapati, and V. K. Dabhi, ‘‘Survey on face expression
+recognition using CNN,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+5th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICACCS), Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2019, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+102–106.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[24] S. Li and W. Deng, ‘‘Deep facial expression recognition: A survey,’’
+IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Affect.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., early access, Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"17, 2020, doi: 10.1109/
+TAFFC.2020.2981446.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[25] A. Fathima and K. Vaidehi, ‘‘Review on facial expression recognition
+system using machine learning techniques,’’ in Advances in Decision
+Sciences, Image Processing, Security and Computer Vision.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Berlin, Ger-
+many: Springer, 2020, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+608–618.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[26] Z. Zeng, M. Pantic, G. I. Roisman, and T. S. Huang, ‘‘A survey of affect
+recognition methods: Audio, visual, and spontaneous expressions,’’ IEEE
+Trans.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Pattern Anal.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"31, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"39–58, Jan. 2009.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[27] E. Sariyanidi, H. Gunes, and A. Cavallaro, ‘‘Automatic analysis of
+facial affect: A survey of registration, representation, and recognition,’’
+IEEE Trans.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Pattern Anal.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"37, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"6, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1113–1133,
+Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2015.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[28] P. Bhattacharya, S. Tanwar, U. Bodke, S. Tyagi, and N. Kumar,
+‘‘BinDaaS: Blockchain-based deep-learning as-a-Service in health-
+care 4.0 applications,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Netw.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Sci.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Eng., early access,
+Dec. 25, 2019, doi: 10.1109/TNSE.2019.2961932.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[29] J. Vora, D. Vekaria, S. Tanwar, and S. Tyagi, ‘‘Machine learning-based
+voltage dip measurement of smart energy meter,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+5th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Parallel, Distrib.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Grid Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(PDGC), Dec. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+828–832.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[30] J. N. Bassili, ‘‘Facial motion in the perception of faces and of emotional
+expression.,’’ J. Experim.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Psychol., Hum.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Perception Perform., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4,
+no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"3, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"373–379, 1978.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[31] C. Padgett and G. W. Cottrell, ‘‘Representing face images for emotion
+classiﬁcation,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"NIPS, 1996, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+894–900.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[32] G. Guo, S. Z. Li, and K. Chan, ‘‘Face recognition by support vector
+machines,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+4th IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Face Gesture Recognit.,
+Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2000, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+196–201.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[33] M. Matsugu, K. Mori, Y. Mitari, and Y. Kaneda, ‘‘Subject independent
+facial expression recognition with robust face detection using a convo-
+lutional neural network,’’ Neural Netw., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"16, nos.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5–6, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"555–559,
+Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2003.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[34] I. Kotsia and I. Pitas, ‘‘Facial expression recognition in image sequences
+using geometric deformation features and support vector machines,’’
+IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Image Process., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"16, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"172–187, Jan. 2007.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[35] S. Ebrahimi Kahou, V. Michalski, K. Konda, R. Memisevic, and C. Pal,
+‘‘Recurrent neural networks for emotion recognition in video,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+ACM Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Multimodal Interact.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"ICMI, 2015, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+467–474.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[36] K. Zhang, Y. Huang, Y.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Du, and L. Wang, ‘‘Facial expression recogni-
+tion based on deep evolutional spatial-temporal networks,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Image Process., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"26, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"9, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4193–4203, Sep. 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[37] W. Zheng, X. Zhou, C. Zou, and L. Zhao, ‘‘Facial expression recogni-
+tion using kernel canonical correlation analysis (KCCA),’’ IEEE Trans.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Neural Netw., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"17, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"233–238, Jan. 2006.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[38] P. Lucey, J. F. Cohn, T. Kanade, J. Saragih, Z. Ambadar, and I. Matthews,
+‘‘The extended cohn-kanade dataset (CK+): A complete dataset for action
+unit and emotion-speciﬁed expression,’’ in Proc.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+IEEE Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Soc.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Pattern Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Workshops, Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2010, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+94–101.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[39] M. Pantic, M. Valstar, R. Rademaker, and L. Maat, ‘‘Web-based database
+for facial expression analysis,’’ in Proc.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Multimedia Expo,
+Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2005, p. 5.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[40] G. Zhao, X. Huang, M. Taini, S. Z. Li, and M. Pietikäinen, ‘‘Facial
+expression recognition from near-infrared videos,’’ Image Vis.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"29, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"9, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"607–619, Aug. 2011.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[41] R. Gross, I. Matthews, J. Cohn, T. Kanade, and S. Baker, ‘‘Multi-PIE,’’
+Image Vis.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"28, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"807–813, May 2010.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[42] O. Langner, R. Dotsch, G. Bijlstra, D. H. J. Wigboldus, S. T. Hawk,
+and A. van Knippenberg, ‘‘Presentation and validation of the radboud
+faces database,’’ Cognition Emotion, vol.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"24, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"8, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1377–1388,
+Dec. 2010.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[43] N. Aifanti, C. Papachristou, and A. Delopoulos, ‘‘The mug facial expres-
+sion database,’’ in Proc.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+11th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Workshop Image Anal.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Multimedia
+Interact.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Services WIAMIS, Apr.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2010, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–4.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[44] J. M. Susskind, A. K. Anderson, and G. E. Hinton, ‘‘The toronto face
+database,’’ Dept.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Sci., Univ.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Toronto, Toronto, ON, Canada,
+Tech.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Rep, 2010, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+3.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[45] I. J. Goodfellow et al., ‘‘Challenges in representation learning: A report
+on three machine learning contests,’’ Neural Netw., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"64, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"59–63,
+Apr.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2015.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[46] P. Viola and M. Jones, ‘‘Rapid object detection using a boosted cascade of
+simple features,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IEEE Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Soc.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pattern
+Recognit.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"CVPR, Dec. 2001, p. 1.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[47] B. Xiao, ‘‘Principal component analysis for feature extraction of image
+sequence,’’ in Proc.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Agricult.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Eng.,
+Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2010, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+250–253.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"VOLUME 8, 2020
+90515
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+[48] S. Tanwar, T. Ramani, and S. Tyagi, ‘‘Dimensionality reduction using
+PCA and SVD in big data: A comparative case study,’’ in Future Internet
+Technologies and Trends, Z. Patel and S. Gupta, eds.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Cham, Switzerland:
+Springer, 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+116–125.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[49] G. Kumar and P. K. Bhatia, ‘‘A detailed review of feature extraction
+in image processing systems,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+4th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Technol., Feb. 2014, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+5–12.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[50] N. Janu, S. Kumar, and P. Mathur, ‘‘Performance analysis of feature
+extraction techniques for facial expression recognition,’’ Int.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+J. Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Appl., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"166, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1–3, 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[51] K. Cho and S. M. Dunn, ‘‘Learning shape classes,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pattern
+Anal.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"16, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"9, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"882–888, Sep. 1994.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[52] K.-C. Song, Y.-H. Yan, W.-H. Chen, and X. Zhang, ‘‘Research and
+perspective on local binary pattern,’’ Acta Automatica Sinica, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"39,
+no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"6, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"730–744, Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2014.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[53] Y. Lecun, L. Bottou, Y. Bengio, and P. Haffner, ‘‘Gradient-based learn-
+ing applied to document recognition,’’ Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"IEEE, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"86, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"11,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2278–2324, Nov. 1998.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[54] R. S. Jadhav and P. Ghadekar, ‘‘Content based facial emotion recogni-
+tion model using machine learning algorithm,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Telecommun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICACAT), Dec. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[55] B. Kitchenham, O. Pearl Brereton, D. Budgen, M. Turner, J. Bailey, and
+S. Linkman, ‘‘Systematic literature reviews in software engineering—A
+systematic literature review,’’ Inf.",0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+Softw.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Technol., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"51, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"7–15,
+Jan. 2009.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[56] P. Mehta, R. Gupta, and S. Tanwar, ‘‘Blockchain envisioned UAV net-
+works: Challenges, solutions, and comparisons,’’ Comput.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Commun.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"151, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"518–538, Feb. 2020.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[57] B. Kitchenham and S. Charters, ‘‘Guidelines for performing systematic
+literature reviews in software engineering,’’ School Comput.",0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0
+Sci.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Math.,
+Keele Univ., Keele, U.K., Tech.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Rep. EBSE-2007-01, 2007.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[58] Japanese Female Facial Expressions (JAFFE).,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 1998.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://zenodo.org/record/3451524
+[59] Extended Cohn-Kanade (CK+).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 2008.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available:
+http://www.consortium.ri.cmu.edu/ckagree/
+[60] Mmi.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 2005.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://mmifacedb.eu/
+[61] Oulu-Casia.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Accessed: Nov. 17, 2011.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Available: http://www.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"cse.oulu.ﬁ/CMV/Downloads/Oulu-CASIA/
+[62] Multi-Pie.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: Oct. 2009.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Available: http://www.cs.cmu.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"edu/afs/cs/project/PIE/MultiPie/Multi-Pie/Home.html
+[63] Multimedia Understanding Group (MUG).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: Apr.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2010.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://mug.ee.auth.gr/fed/
+[64] Toronto Faces Dataset (TFD).",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Accessed: Apr.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2005.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available:
+https://josh@mplab.ucsd.edu
+[65] Radbound Faces Database (RAFD).",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Accessed: 2011.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available:
+http://www.socsci.ru.nl:8180/RaFD2/RaFD
+[66] Fer-2013.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 2013.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://www.kaggle.com/
+c/challenges-in-representation-learning-facial-expression-recognition-
+challenge/data
+[67] A. Dhall, R. Goecke, S. Lucey, and T. Gedeon, ‘‘Static facial expression
+analysis in tough conditions: Data, evaluation protocol and benchmark,’’
+in Proc.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Workshops (ICCV Workshops),
+Nov. 2011, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2106–2112.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[68] Sfew (Emotiw).,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 2012.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Available: https://josh@mplab.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"ucsd.edu
+[69] A. Mollahosseini, B. Hasani, and M. H. Mahoor, ‘‘AffectNet: A database
+for facial expression, valence, and arousal computing in the wild,’’ IEEE
+Trans.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+Affect.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"10, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"18–31, Jan. 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[70] Affectnet.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 2017.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Available: http://mohammadmahoor.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"com/affectnet/
+[71] R. Kosti, J. Alvarez, A. Recasens, and A. Lapedriza, ‘‘Context based
+emotion recognition using EMOTIC dataset,’’ IEEE Trans.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Pattern
+Anal.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell., early access, May 14, 2019, doi: 10.1109/TPAMI.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2019.2916866.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[72] Context is Important to Recognize Emotions.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Accessed: 2020.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: http://sunai.uoc.edu/emotic/
+[73] M. Lyons, S. Akamatsu, M. Kamachi, and J. Gyoba, ‘‘Coding facial
+expressions with Gabor wavelets,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+3rd IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Face Gesture Recognit., Apr.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1998, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+200–205.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[74] M. F. Valstar and M. Pantic, ‘‘Induced disgust, happiness and surprise:
+An addition to the MMI facial expression database,’’ Tech.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Rep., 2010.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[75] J. Jayalekshmi and T. Mathew, ‘‘Facial expression recognition and emo-
+tion classiﬁcation system for sentiment analysis,’’ in Proc.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Netw.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(NetACT), Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2017, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–8.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[76] H. Li, Z. Lin, X. Shen, J. Brandt, and G. Hua, ‘‘A convolutional neural
+network cascade for face detection,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IEEE Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Pattern Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(CVPR), Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2015, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+5325–5334.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[77] H. Ding, S. K. Zhou, and R. Chellappa, ‘‘FaceNet2ExpNet: Regular-
+izing a deep face recognition net for expression recognition,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+12th IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Face Gesture Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(FG ), May 2017,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+118–126.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[78] N. Lopes, A. Silva, S. R. Khanal, A. Reis, J. Barroso, V. Filipe, and
+J. Sampaio, ‘‘Facial emotion recognition in the elderly using a SVM clas-
+siﬁer,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2nd Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Innov.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Sports, Health Wellbeing
+(TISHW), Thessaloniki, Greece, Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[79] M. N. Chaudhari, M. Deshmukh, G. Ramrakhiani, and R. Parvatikar,
+‘‘Face detection using viola jones algorithm and neural networks,’’ in
+Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+4th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Control Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCUBEA),
+Aug. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[80] N. B. Kar, K. S. Babu, A. K. Sangaiah, and S. Bakshi, ‘‘Face expression
+recognition system based on ripplet transform type II and least square
+SVM,’’ Multimedia Tools Appl., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"78, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4789–4812, Feb. 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[81] H. M. Shah, A. Dinesh, and T. S. Sharmila, ‘‘Analysis of facial landmark
+features to determine the best subset for ﬁnding face orientation,’’ in Proc.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Intell.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Data Sci.,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"(ICCIDS), Feb. 2019, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–4.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[82] Y.-Q.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Wang, ‘‘An analysis of the viola-jones face detection algorithm,’’
+Image Process.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Line, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"128–148, Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2014.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[83] W.-Y.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Lu and M. Yang, ‘‘Face detection based on viola-jones algorithm
+applying composite features,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Robots Intell.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICRIS), Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2019, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+82–85.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[84] B. Islam, F. Mahmud, and A. Hossain, ‘‘Facial expression region segmen-
+tation based approach to emotion recognition using 2D Gabor ﬁlter and
+multiclass support vector machine,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+21st Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Inf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCIT), Dec. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[85] Y. Luo, C.-M. Wu, and Y. Zhang, ‘‘Facial expression recognition based on
+fusion feature of PCA and LBP with SVM,’’ Optik Int.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+J.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Light Electron
+Opt., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"124, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"17, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2767–2770, Sep. 2013.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[86] Carnap, Hilbert, Ackermann, Russell, and Whitehead, ‘‘A logical calculus
+of the ideas immanent in nervous activity,’’ Tech.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Rep., Jan. 1970.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[87] S.-S. Liu and Y.-T. Tian, ‘‘Facial expression recognition method based on
+Gabor wavelet features and fractional power polynomial kernel PCA,’’ in
+Advances in Neural Networks—ISNN, L. Zhang, B.-L. Lu, and J. Kwok,
+eds.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Berlin, Germany: Springer, 2010, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+144–151.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[88] H.-F. Huang and S.-C. Tai, ‘‘Facial expression recognition using new
+feature extraction algorithm,’’ ELCVIA Electron.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Lett.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Image
+Anal., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"11, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, p. 41, 2012.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[89] S. Biswas and J. Sil, ‘‘Facial expression recognition using modiﬁed local
+binary pattern,’’ in Computational Intelligence in Data Mining, vol.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"2,
+L. C. Jain, H. S. Behera, J. K. Mandal, and D. P. Mohapatra, eds.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"New Delhi, India: Springer, 2015, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+595–604.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[90] S. Chickerur, T. Reddy, and O. Shabalina, ‘‘Parallel scale invariant fea-
+ture transform based approach for facial expression recognition,’’ in
+Creativity in Intelligent Technologies and Data Science, A. Kravets,
+M. Shcherbakov, M. Kultsova, and O. Shabalina, eds.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Cham, Switzerland:
+Springer, 2015, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+621–636.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[91] A. Mollahosseini, D. Chan, and M. H. Mahoor, ‘‘Going deeper in facial
+expression recognition using deep neural networks,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"IEEE Win-
+ter Conf.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Appl.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(WACV), Lake Placid, NY, USA, Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2016,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–10.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[92] N. Mehta and S. Jadhav, ‘‘Facial emotion recognition using log Gabor
+ﬁlter and PCA,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Control Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCUBEA), Aug. 2016, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[93] M. Sajjad, A. Shah, Z. Jan, S. I. Shah, S. W. Baik, and I. Mehmood,
+‘‘Facial appearance and texture feature-based robust facial expression
+recognition framework for sentiment knowledge discovery,’’ Cluster
+Comput., vol.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"21, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"549–567, Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2018.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[94] A. Srivastava, S. Mane, A. Shah, N. Shrivastava, and B. Thakare, ‘‘A sur-
+vey of face detection algorithms,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Inventive Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Control (ICISC), Jan. 2017, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–4.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[95] R. Ravi, S. V. Yadhukrishna, and R. Prithviraj, ‘‘A face expression recog-
+nition using CNN & LBP,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+4th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Methodologies
+Commun.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"(ICCMC), Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2020, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+684–689.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[96] A. L. A. Ramos, B. G. Dadiz, and A.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"B. G. Santos, ‘‘Classifying emotion
+based on facial expression analysis using Gabor ﬁlter: A basis for adaptive
+effective teaching strategy,’’ in Computational Science and Technology.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Singapore: Springer, 2020, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+469–479.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[97] T. Ojala, M. Pietikainen, and T. Maenpaa, ‘‘Multiresolution gray-scale
+and rotation invariant texture classiﬁcation with local binary patterns,’’
+IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Pattern Anal.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"24, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"7, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"971–987,
+Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2002.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"90516
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+[98] V. Takala, T. Ahonen, and M. Pietikäinen, ‘‘Block-based methods for
+image retrieval using local binary patterns,’’ in Image Analysis, H. Kalvi-
+ainen, J. Parkkinen, and A. Kaarna, eds.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Berlin, Germany: Springer, 2005,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+882–891.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[99] T. Ahonen, A. Hadid, and M. Pietikainen, ‘‘Face description with local
+binary patterns: Application to face recognition,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pattern
+Anal.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"28, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"12, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2037–2041, Dec. 2006.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[100] M. Guo, X. Hou, Y. Ma, and X. Wu, ‘‘Facial expression recognition using
+ELBP based on covariance matrix transform in KLT,’’ Multimedia Tools
+Appl., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"76, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2995–3010, Jan. 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[101] D. Huang, C. Shan, M. Ardabilian, Y. Wang, and L. Chen, ‘‘Local binary
+patterns and its application to facial image analysis: A survey,’’ IEEE
+Trans.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Syst., Man, Cybern.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"C, Appl.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Rev., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"41, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"6, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"765–781,
+Nov. 2011.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[102] K. Verma and A. Khunteta, ‘‘Facial expression recognition using Gabor
+ﬁlter and multi-layer artiﬁcial neural network,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Inf.,
+Commun., Instrum.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Control (ICICIC), Aug. 2017, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–5.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[103] J. Ilonen, J. Kämäräinen, and H. Kälviäinen, ‘‘Efﬁcient computation of
+Gabor,’’ Dept.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Inf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Technol., Lappeenranta Univ.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Technol., Lappeenranta,
+Finland, Res.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Rep. 100.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[104] A.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"B. Watson, ‘‘Image compression using the discrete cosine transform,’’
+Math.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"J., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, p. 81, 1994.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[105] E. Feig and S. Winograd, ‘‘Fast algorithms for the discrete cosine trans-
+form,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Signal Process., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"40, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"9, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2174–2193,
+Sep. 1992.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[106] S. Dabbaghchian, A. Aghagolzadeh, and M. S. Moin, ‘‘Feature extraction
+using discrete cosine transform for face recognition,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+9th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Symp.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Signal Process.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Appl., Feb. 2007, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–4.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[107] N. Ahmed, T. Natarajan, and K. R. Rao, ‘‘Discrete cosine transform,’’
+IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"100, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"90–93, 1974.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[108] D. G. Lowe, ‘‘Distinctive image features from scale-invariant keypoints,’’
+Int.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+J. Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Vis., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"60, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"91–110, Nov. 2004.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[109] D. G. Lowe, ‘‘Object recognition from local scale-invariant features,’’ in
+Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+7th IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Vis., Sep. 1999, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1150–1157.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[110] N. Dalal and B. Triggs, ‘‘Histograms of oriented gradients for human
+detection,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IEEE Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Soc.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pattern
+Recognit.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(CVPR), Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2005, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+886–893.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[111] T. Nguyen, E.-A.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Park, J. Han, D.-C. Park, and S.-Y.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Min, ‘‘Object detec-
+tion using scale invariant feature transform,’’ in Genetic and Evolutionary
+Computing.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Cham, Switzerland: Springer, 2014, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+65–72.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[112] S. Tanwar, J. Vora, S. Kaneriya, S. Tyagi, N. Kumar, V. Sharma, and
+I.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"You, ‘‘Human arthritis analysis in fog computing environment using
+Bayesian network classiﬁer and thread protocol,’’ IEEE Consum.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Elec-
+tron.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Mag., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"9, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"88–94, Jan. 2020.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[113] X. Xiong and F. De la Torre, ‘‘Supervised descent method and its appli-
+cations to face alignment,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+IEEE Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pattern
+Recognit., Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2013, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+532–539.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[114] H. Bay, T. Tuytelaars, and L. Van Gool, ‘‘Surf: Speeded up robust fea-
+tures,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eur.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Berlin, Germany: Springer, 2006,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+404–417.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[115] B. Islam, F. Mahmud, A. Hossain, P. B. Goala, and M. S. Mia, ‘‘A facial
+region segmentation based approach to recognize human emotion using
+fusion of HOG & LBP features and artiﬁcial neural network,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+4th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Electr.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eng.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Inf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(iCEEiCT), Sep. 2018,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+642–646.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[116] P. Liu, S. Han, Z. Meng, and Y. Tong, ‘‘Facial expression recognition via
+a boosted deep belief network,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IEEE Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Pattern
+Recognit., Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2014, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1805–1812.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[117] Y. Lv, Z. Feng, and C. Xu, ‘‘Facial expression recognition via deep
+learning,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Smart Comput., Nov. 2014, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+303–308.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[118] I.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"A. Adeyanju, E. O. Omidiora, and O. F. Oyedokun, ‘‘Performance
+evaluation of different support vector machine kernels for face emotion
+recognition,’’ in Proc.",0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
+SAI Intell.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(IntelliSys), Nov. 2015,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+804–806.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[119] K. Talele, A. Shirsat, T. Uplenchwar, and K. Tuckley, ‘‘Facial expression
+recognition using general regression neural network,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"IEEE
+Bombay Sect.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Symp.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(IBSS), Dec. 2016, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[120] P. Khorrami, T. L. Paine, and T. S. Huang, ‘‘Do deep neural networks
+learn facial action units when doing expression recognition?’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Workshop (ICCVW), Dec. 2015, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+19–27.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[121] G. Wen, Z. Hou, H. Li, D. Li, L. Jiang, and E. Xun, ‘‘Ensemble of
+deep neural networks with probability-based fusion for facial expression
+recognition,’’ Cognit.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"9, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"597–610, Oct. 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[122] S. Datta, D. Sen, and R. Balasubramanian, ‘‘Integrating geometric and
+textural features for facial emotion classiﬁcation using SVM frame-
+works,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"CVIP, 2016, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+619–628.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[123] J. Cai, Z. Meng, A. S. Khan, Z. Li, J. OReilly, and Y. Tong, ‘‘Island loss for
+learning discriminative features in facial expression recognition,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+13th IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Face Gesture Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(FG ), May 2018,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+302–309.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[124] P. Dhankhar, ‘‘Resnet-50 and VGG-16 for recognizing facial emotions,’’
+Int.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+J. Innov.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eng.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Technol., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"13, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"126–130, 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[125] A. Renda, M. Barsacchi, A. Bechini, and F. Marcelloni, ‘‘Com-
+paring ensemble strategies for deep learning: An application to
+facial expression recognition,’’ Expert Syst.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Appl., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"136, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1–11,
+Dec. 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[126] Y. Gan, J. Chen, and L. Xu, ‘‘Facial expression recognition boosted by
+soft label with a diverse ensemble,’’ Pattern Recognit.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Lett., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"125,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"105–112, Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2019.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[127] M. M. Taghi Zadeh, M. Imani, and B. Majidi, ‘‘Fast facial emo-
+tion recognition using convolutional neural networks and Gabor ﬁl-
+ters,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+5th Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Knowl.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Based Eng.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Innov.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(KBEI), Feb. 2019,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+577–581.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[128] A. Rajendra Kurup, M. Ajith, and M. Martínez Ramón, ‘‘Semi-supervised
+facial expression recognition using reduced spatial features and deep
+belief networks,’’ Neurocomputing, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"367, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"188–197, Nov. 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[129] E. Pranav, S. Kamal, C. Satheesh Chandran, and M. H. Supriya, ‘‘Facial
+emotion recognition using deep convolutional neural network,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+6th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Adv.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICACCS), Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2020,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+317–320.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[130] R. Gupta, S. Tanwar, S. Tyagi, and N. Kumar, ‘‘Machine learning mod-
+els for secure data analytics: A taxonomy and threat model,’’ Comput.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Commun., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"153, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"406–440, Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2020.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[131] M. Mathieu, M. Henaff, and Y. LeCun, ‘‘Fast training of convolutional
+networks through ffts,’’ 2013, arXiv:1312.5851.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available:
+https://arxiv.org/abs/1312.5851
+[132] S. Anwar, K. Hwang, and W. Sung, ‘‘Structured pruning of deep convolu-
+tional neural networks,’’ ACM J. Emerg.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Syst., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"13,
+no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"3, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1–18, May 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[133] D. Mungra, A. Agrawal, P. Sharma, S. Tanwar, and M. S. Obaidat,
+‘‘PRATIT: A CNN-based emotion recognition system using histogram
+equalization and data augmentation,’’ Multimedia Tools Appl., vol.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"79,
+nos.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"3–4, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2285–2307, Jan. 2020.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[134] D. Scherer, A. C. Müller, and S. Behnke, ‘‘Evaluation of pooling oper-
+ations in convolutional architectures for object recognition,’’ in Proc.",0.0,0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0
+"ICANN, 2010, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+92–101.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[135] M. D. Zeiler and R. Fergus, ‘‘Stochastic pooling for regularization of
+deep convolutional neural networks,’’ 2013, arXiv:1301.3557.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://arxiv.org/abs/1301.3557
+[136] Q. Zhao, S. Lyu, B. Zhang, and W. Feng, ‘‘Multiactivation pooling
+method in convolutional neural networks for image recognition,’’ Wire-
+less Commun.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Mobile Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2018, Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2018, Art.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+no.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+8196906.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[137] C.-L. Zhang, J.-H. Luo, X.-S. Wei, and J. Wu, ‘‘In defense of fully
+connected layers in visual representation transfer,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"PCM, 2017,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+807–817.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[138] A. Krizhevsky, I. Sutskever, and G. E. Hinton, ‘‘ImageNet classiﬁca-
+tion with deep convolutional neural networks,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"NIPS, 2012,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1097–1105.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[139] S. Albawi, T. A. Mohammed, and S. Al-Zawi, ‘‘Understanding of a
+convolutional neural network,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eng.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Technol.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICET),
+Aug. 2017, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[140] Y.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Sun, W. Zhang, H. Gu, C. Liu, S. Hong, W. Xu, J. Yang, and
+G. Gui, ‘‘Convolutional neural network based models for improving
+super-resolution imaging,’’ IEEE Access, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"7, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"43042–43051, 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[141] R. Memisevic, K. R. Konda, and D. Krueger, ‘‘Zero-bias autoen-
+coders and the beneﬁts of co-adapting features,’’ 2014, arXiv:1402.3337.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://arxiv.org/abs/1402.3337
+[142] T. L. Paine, P. Khorrami, W. Han, and T. S. Huang, ‘‘An analy-
+sis of unsupervised pre-training in light of recent advances,’’ 2014,
+arXiv:1412.6597.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://arxiv.org/abs/1412.6597
+[143] A. Krizhevsky, I. Sutskever, and G. E. Hinton, ‘‘ImageNet classiﬁcation
+with deep convolutional neural networks,’’ Commun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"ACM, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"60, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"6,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"84–90, May 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[144] A. Gudi, ‘‘Recognizing semantic features in faces using deep learn-
+ing,’’ 2015, arXiv:1512.00743.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: http://arxiv.org/abs/
+1512.00743
+[145] K. Simonyan and A. Zisserman, ‘‘Very deep convolutional networks
+for large-scale image recognition,’’ 2014, arXiv:1409.1556.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://arxiv.org/abs/1409.1556
+[146] K. He, X. Zhang, S. Ren, and J.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Sun, ‘‘Deep residual learning for
+image recognition,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+IEEE Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Pattern Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(CVPR), Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2016, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+770–778.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"VOLUME 8, 2020
+90517
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+[147] D. Eigen, J. T. Rolfe, R. Fergus, and Y. LeCun, ‘‘Understanding
+deep architectures using a recursive convolutional network,’’ 2013,
+arXiv:1312.1847.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available: https://arxiv.org/abs/1312.1847
+[148] G. Sandbach, S. Zafeiriou, M. Pantic, and L. Yin, ‘‘Static and dynamic
+3D facial expression recognition: A comprehensive survey,’’ Image Vis.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Comput., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"30, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"10, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"683–697, Oct. 2012.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[149] S. Wan and J. K. Aggarwal, ‘‘Spontaneous facial expression recognition:
+A robust metric learning approach,’’ Pattern Recognit., vol.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"47, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1859–1868, May 2014.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[150] P. Thakkar, K. Varma, V. Ukani, S. Mankad, and S. Tanwar, ‘‘Com-
+bining user-based and item-based collaborative ﬁltering using machine
+learning,’’ in Information and Communication Technology for Intelligent
+Systems, S. C. Satapathy and A. Joshi, eds.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Singapore: Springer, 2019,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+173–180.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[151] S. Kaneriya, S. Tanwar, S. Buddhadev, J. P. Verma, S. Tyagi, N. Kumar,
+and S. Misra, ‘‘A range-based approach for long-term forecast of weather
+using probabilistic Markov model,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Commun.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Workshops (ICC Workshops), May 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1–6.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[152] R. Lysiak, M. Kurzynski, and T. Woloszynski, ‘‘Optimal selection of
+ensemble classiﬁers using measures of competence and diversity of base
+classiﬁers,’’ Neurocomputing, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"126, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"29–35, Feb. 2014.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[153] B.-K. Kim, S.-Y.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Dong, J. Roh, G. Kim, and S.-Y.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Lee, ‘‘Fusing aligned
+and non-aligned face information for automatic affect recognition in the
+wild: A deep learning approach,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+IEEE Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Pattern Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Workshops (CVPRW), Jun.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2016, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+1499–1508.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[154] S. Ioffe and C. Szegedy, ‘‘Batch normalization: Accelerating deep
+network
+training
+by
+reducing
+internal
+covariate
+shift,’’
+2015,
+arXiv:1502.03167.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[Online].,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Available:
+https://arxiv.org/abs/1502.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"03167
+[155] V. Vapnik, The Nature of Statistical Learning Theory.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"New York, NY,
+USA: Springer, 2013.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[156] S. Knerr, L. Personnaz, and G. Dreyfus, ‘‘Single-layer learning revisited:
+A stepwise procedure for building and training a neural network,’’ in
+Neurocomputing (NATO ASI Series), vol.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"F68, F. F. Soulié and J. Hérault,
+Eds.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Berlin, Germany: Springer-Verlag, 1990, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+41–50.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[157] C.-W. Hsu and C.-J.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Lin, ‘‘A comparison of methods for multiclass
+support vector machines,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"Neural Netw., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"13, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"415–425, Mar.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2002.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[158] J. C. Platt, N. Cristianini, and J. Shawe-Taylor, ‘‘Large margin dags for
+multiclass classiﬁcation,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"NIPS, 1999, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+547–553.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[159] S. Tanwar, Q. Bhatia, P. Patel, A. Kumari, P. K. Singh, and W.-C. Hong,
+‘‘Machine learning adoption in blockchain-based smart applications: The
+challenges, and a way forward,’’ IEEE Access, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"8, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"474–488, 2020.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[160] W. S. McCulloch and W. Pitts, ‘‘A logical calculus of the ideas immanent
+in nervous activity,’’ Bull.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Math.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Biol., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"52, nos.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1–2, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"99–115,
+Jan. 1990.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[161] R. Gupta, S. Tanwar, S. Tyagi, and N. Kumar, ‘‘Tactile-Internet-Based
+telesurgery system for healthcare 4.0: An architecture, research chal-
+lenges, and future directions,’’ IEEE Netw., vol.",1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"33, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"6, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"22–29,
+Nov. 2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[162] H. Vachhani, M. S. Obiadat, A. Thakkar, V. Shah, R. Sojitra, J. Bhatia,
+and S. Tanwar, ‘‘Machine learning based stock market analysis: A short
+survey,’’ in Innovative Data Communication Technologies and Applica-
+tion, J. S. Raj, A. Bashar, and S. R. J. Ramson, eds.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"Cham, Switzerland:
+Springer, 2020, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+12–26.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[163] G. Hinton, ‘‘Deep belief networks,’’ Scholarpedia, vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"4, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"5, p. 5947,
+2009.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[164] G. E. Hinton, S. Osindero, and Y.-W. Teh, ‘‘A fast learning algorithm
+for deep belief nets,’’ Neural Comput., vol.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"18, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"7, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1527–1554,
+Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+2006.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[165] M. Schuster and K. K. Paliwal, ‘‘Bidirectional recurrent neural net-
+works,’’ IEEE Trans.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Signal Process., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"45, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"11, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2673–2681,
+Nov. 1997.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[166] A. Mostafa, M. I. Khalil, and H. Abbas, ‘‘Emotion recognition by facial
+features using recurrent neural networks,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+13th Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Com-
+put.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eng.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Syst.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCES), Dec. 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+417–422.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[167] X. Huang, G. Zhao, W. Zheng, and M. Pietikäinen, ‘‘Towards a dynamic
+expression recognition system under facial occlusion,’’ Pattern Recognit.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Lett., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"33, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"16, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"2181–2191, Dec. 2012.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[168] M. Pantie and L. J. M. Rothkrantz, ‘‘Automatic analysis of facial expres-
+sions: The state of the art,’’ IEEE Trans.",0.0,0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0
+Pattern Anal.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Mach.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Intell.,
+vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"22, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"12, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"1424–1445, Dec. 2000.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[169] F.-J.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Chang, A. Tuan Tran, T. Hassner, I. Masi, R. Nevatia, and
+G. Medioni, ‘‘ExpNet: Landmark-free, deep, 3D facial expressions,’’
+in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+13th IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Autom.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Face Gesture Recognit.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(FG),
+May 2018, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+122–129.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[170] F. Ringeval, M. Pantic, B. Schuller, M. Valstar, J. Gratch, R. Cowie,
+S. Scherer, S. Mozgai, N. Cummins, and M. Schmitt, ‘‘AVEC 2017:
+Real-life depression, and affect recognition workshop and challenge,’’ in
+Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+7th Annu.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Workshop Audio/Visual Emotion Challenge AVEC, 2017,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+3–9.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[171] Z. Wu, T. Chen, Y. Chen, Z. Zhang, and G. Liu, ‘‘NIRExpNet: Three-
+stream 3D convolutional neural network for near infrared facial expres-
+sion recognition,’’ Appl.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"Sci., vol.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"7, no.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"11, p. 1184, 2017.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[172] M. D. Zeiler and R. Fergus, ‘‘Visualizing and understanding convolu-
+tional networks,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Eur.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Comput.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Vis.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Cham, Switzerland:
+Springer, 2014, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+818–833.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"[173] N. Mousavi, H. Siqueira, P. Barros, B. Fernandes, and S. Wermter,
+‘‘Understanding how deep neural networks learn face expressions,’’
+in
+Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Joint
+Conf.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Neural
+Netw.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(IJCNN),
+Jul.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+"2016,
+pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+227–234.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+[174] I.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Song, H.-J.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Kim, and P. B. Jeon, ‘‘Deep learning for real-time robust
+facial expression recognition on a smartphone,’’ in Proc.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0,0.0
+IEEE Int.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Conf.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Consum.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+Electron.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"(ICCE), Jan. 2014, pp.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+564–567.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"KEYUR PATEL is currently pursuing the bache-
+lor’s degree with Nirma University, Ahmedabad,
+India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"His research interests include computer
+vision, natural language processing, energy-based
+models, and reinforcement learning.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"DEV MEHTA is currently pursuing the bachelor’s
+degree with Nirma University, Ahmedabad, India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"His research interests are machine learning, com-
+puter vision, and natural language processing.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"CHINMAY MISTRY is currently pursuing the
+bachelor’s degree with Nirma University, Ahmed-
+abad, India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"His research interests are machine
+learning, computer vision, and natural language
+processing.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"90518
+VOLUME 8, 2020
+K. Patel et al.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+": Facial Sentiment Analysis Using AI Techniques: State-of-the-Art, Taxonomies, and Challenges
+RAJESH
+GUPTA
+(Student
+Member,
+IEEE)
+received the B.E.",0.0,0.0,0.0,0.0,0.0,1.0,0.0,0.0,0.0
+"degree from the University of
+Jammu, India, in 2008 and the M.Tech.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"degree
+from Shri Mata Vaishno Devi University, Jammu,
+India, in 2013.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is a full-time Ph.D. Research
+Scholar with Computer Science and Engineer-
+ing Department, Nirma University, Ahmedabad,
+India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He has authored/coauthored 13 publications
+(including seven articles in SCI indexed jour-
+nals and six articles in IEEE ComSoc sponsored
+international conferences).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Some of his research ﬁndings are published in
+top-cited journals, such as the IEEE NETWORKS, Computer Communications,
+Computer and Electrical Engineering (Elsevier), and the International
+Journal of Communication System (Wiley).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"His research interests include
+network security, blockchain technology, 5G communication networks, and
+machine learning.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is a recipient of the Doctoral Scholarship from the
+Ministry of Electronics and Information Technology, Govt.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"of India, under
+the Visvesvaraya Ph.D. Scheme.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"SUDEEP TANWAR (Member, IEEE) received
+the B.Tech.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"degree from Kurukshetra Univer-
+sity, India, in 2002, the M.Tech.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+degree (Hons.),0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"from Guru Gobind Singh Indraprastha University,
+Delhi, India, in 2009, and the Ph.D. degree with
+specialization in wireless sensor network, in 2016.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is an Associate Professor with Computer Sci-
+ence and Engineering Department, Institute of
+Technology, Nirma University, Ahmedabad, India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is a Visiting Professor with Jan Wyzykowski
+University, Polkowice, Poland and the University of Pitesti, Pitesti, Romania.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He has authored or coauthored more than 130 technical research articles
+published in leading journals and conferences from the IEEE, Elsevier,
+Springer, Wiley, and so on.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Some of his research ﬁndings are published in
+top-cited journals, such as the IEEE TRANSACTIONS ON NETWORK SCIENCE AND
+ENGINEERING, the IEEE TRANSACTIONS ON VEHICULAR TECHNOLOGY, the IEEE
+TRANSACTIONS ON INDUSTRIAL INFORMATICS, Computer Communication, Applied
+Soft Computing, the Journal of Network and Computer Application, Perva-
+sive and Mobile Computing, the International Journal of Communication
+System, Telecommunication System, Computer and Electrical Engineering,
+and the IEEE SYSTEMS JOURNAL.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He has also published six edited/authored
+books with international/national publishers, such as IET and Springer.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+He has guided many students leading to M.E./M.Tech.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"and guiding students
+leading to Ph.D. His current interests include wireless sensor networks,
+fog computing, smart grid, the IoT, and blockchain technology.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He was
+invited as a Guest Editor/Editorial Board Member of many international
+journals, invited for keynote speaker in many international conferences held
+in Asia and invited as the program chair, the publications chair, the publicity
+chair, and the session chair in many international conferences held in North
+America, Europe, Asia, and Africa.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He has been awarded the Best Research
+Paper Awards from the IEEE GLOBECOM 2018, IEEE ICC 2019, and
+Springer ICRIC-2019.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is an Associate Editor of IJCS (Wiley) and Security
+and Privacy (Wiley).",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"NEERAJ
+KUMAR
+(Senior
+Member,
+IEEE)
+received the Ph.D. degree in CSE from Shri Mata
+Vaishno Devi University, Katra, India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He was
+a Postdoctoral Research Fellow with Coven-
+try University, Coventry, U.K.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is currently
+a Full Professor with the Department of Com-
+puter Science and Engineering, Thapar University,
+Patiala, India.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He
+is also a Visiting Professor
+at Coventry University.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He has published more
+than 300 technical research articles in leading
+journals and conferences from IEEE, Elsevier, Springer, John Wiley, and
+so on.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"Some of his research ﬁndings are published in top-cited jour-
+nals, such as the IEEE TRANSACTIONS ON INDUSTRIAL ELECTRONICS, the IEEE
+TRANSACTIONS ON DEPENDABLE AND SECURE COMPUTING, the IEEE TRANSACTIONS
+ON INTELLIGENT TRANSPORTATION, the IEEE TRANSACTIONS ON CLOUD COMPUTING,
+the IEEE TRANSACTIONS ON KNOWLEDGE AND DATA ENGINEERING, the IEEE
+TRANSACTIONS ON VEHICULAR TECHNOLOGY, the IEEE TRANSACTIONS ON
+CONSUMER ELECTRONICS, the IEEE Network, the IEEE Communications Mag-
+azine, the IEEE WIRELESS COMMUNICATIONS, the IEEE INTERNET OF THINGS
+JOURNAL, the IEEE SYSTEMS JOURNAL, Future Generation Computing Sys-
+tems, the Journal of Network and Computer Applications, and Computer
+Communications.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+He has guided many Ph.D. and M.E./M.Tech.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+students.,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"His research was supported by funding from Tata Consultancy Service,
+the Council of Scientiﬁc and Industrial Research (CSIR), and the Department
+of Science and Technology.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He was awarded the Best Research Paper
+Awards from IEEE ICC 2018 and IEEE SYSTEMS JOURNAL 2018.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is
+leading the research group Sustainable Practices for Internet of Energy and
+Security (SPINES) where group members are working on the latest cutting
+edge technologies.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is a TPC member and a reviewer of many international
+conferences across the globe.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"AMOUN
+ALAZAB
+(Senior Member, IEEE)
+received the Ph.D. degree in computer science
+from the School of Science, Information Tech-
+nology and Engineering, Federation University of
+Australia.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is a Cyber Security Researcher and
+a Practitioner with industry and academic experi-
+ence.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is an Associate Professor with the Col-
+lege of Engineering, IT and Environment, Charles
+Darwin University, Australia.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"His research is mul-
+tidisciplinary that focuses on cyber security and
+digital forensics of computer systems with a focus on cybercrime detec-
+tion and prevention.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He has more than 150 research articles in many
+international journals and conferences, such as the IEEE TRANSACTIONS ON
+INDUSTRIAL INFORMATICS, the IEEE TRANSACTIONS ON INDUSTRY APPLICATIONS,
+the IEEE TRANSACTIONS ON BIG DATA, the IEEE TRANSACTIONS ON VEHICULAR
+TECHNOLOGY, COMPUTERS AND SECURITY, and Future Generation Comput-
+ing Systems.",0.0,1.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+"He delivered many invited and keynote speeches, 24 events
+in 2019 alone.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He convened and chaired more than 50 conferences and work-
+shops.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He works closely with government and industry on many projects,
+including the Northern Territory (NT) Department of Information and Cor-
+porate Services, IBM, Trend Micro, the Australian Federal Police (AFP),
+Westpac, and the Attorney Generals Department.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"He is the Founding Chair
+of the IEEE Northern Territory (NT) Subsection.",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
+"VOLUME 8, 2020
+90519",0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,1.0
